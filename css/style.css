@@ -1,0 +1,48 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: rgb(207, 193, 228);
+}
+
+header {
+    display: flex;
+    align-items: center;
+}
+
+header nav {
+    display: flex;
+    gap: 16px;
+}
+
+header nav a {
+    color: rgb(7, 6, 6);
+    text-decoration: none;
+}
+
+header nav a:hover {
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.14);
+    transform: translateX(-2px);
+    padding: 2px;
+    border-radius: 10px;
+}
+
+.logo-principal {
+    width: 70px;
+    height: 70px;
+    border-radius: 25px;
+}
+
+h2 {
+    text-align: center;
+}
+
+
+/* === Pie de página === */
+footer {
+    background-color: rgb(142, 96, 125);
+    padding: 14px;
+}
