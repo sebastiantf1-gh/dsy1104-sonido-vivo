@@ -44,7 +44,7 @@ h3 {
     color: rgb(78, 78, 78);
 }
 
-/* === Catálogo === */
+/* === Categorias === */
 .grilla-categorias {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -67,6 +67,25 @@ h3 {
     object-fit: contain;
     border-radius: 6px;
     margin-bottom: 10px;
+}
+
+/* === Catalogo === */
+
+.grilla-catalogo{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 24px 0;
+}
+
+.producto-catalogo{
+    background-color: rgb(200, 184, 224);
+    border-radius: 8px;
+    padding: 24px;
+    gap: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+    text-align: center;
+
 }
 
 
