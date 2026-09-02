@@ -4,10 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Gestión de Inventario</title>
+    <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
     <header>
-      <h1>LOGO</h1>
+      <img src="img/logo.jpg" alt="logo de sonido vivo" class="logo-principal">
+      <h1>Sonido <br> Vivo</h1>
       <nav>
         <ul>
           <li>Dashboards</li>
@@ -18,7 +20,7 @@
     </header>
 
     <main>
-      <section>
+      <section id="admin-inventario">
         <h2>Gestión de Inventario</h2>
         <section>
           <h3>Filtros</h3>
@@ -39,22 +41,129 @@
               </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>Guitarra</td>
-                    <td>00000001</td>
-                    <td>Guitarras</td>
-                    <td>$200.000</td>
-                    <td>12 en stock</td>
-                    <td>
-                        <button>Agregar</button>
-                        <button>Editar</button>
-                        <button>Eliminar (1 unidad)</button>
-                    </td>
-                </tr>
+              <tr>
+                <td>Guitarra Eléctrica Fender Stratocaster</td>
+                <td>00000001</td>
+                <td>Guitarras</td>
+                <td>$699.990</td>
+                <td>12 en stock</td>
+                <td>
+                  <button class="btn-agregar">Agregar</button>
+                  <button class="btn-editar">Editar</button>
+                  <button class="btn-eliminar">Eliminar (1 unidad)</button>
+                </td>
+              </tr>
+              <tr>
+                <td>Bajo Eléctrico Ibanez SR300E</td>
+                <td>00000002</td>
+                <td>Bajos</td>
+                <td>$389.990</td>
+                <td>8 en stock</td>
+                <td>
+                  <button class="btn-agregar">Agregar</button>
+                  <button class="btn-editar">Editar</button>
+                  <button class="btn-eliminar">Eliminar (1 unidad)</button>
+                </td>
+              </tr>
+              <tr>
+                <td>Batería Acústica Pearl Export</td>
+                <td>00000003</td>
+                <td>Percusión</td>
+                <td>$899.990</td>
+                <td>3 en stock</td>
+                <td>
+                  <button class="btn-agregar">Agregar</button>
+                  <button class="btn-editar">Editar</button>
+                  <button class="btn-eliminar">Eliminar (1 unidad)</button>
+                </td>
+              </tr>
+              <tr>
+                <td>Teclado Digital Yamaha P-125</td>
+                <td>00000004</td>
+                <td>Teclados</td>
+                <td>$520.000</td>
+                <td>5 en stock</td>
+                <td>
+                  <button class="btn-agregar">Agregar</button>
+                  <button class="btn-editar">Editar</button>
+                  <button class="btn-eliminar">Eliminar (1 unidad)</button>
+                </td>
+              </tr>
+              <tr>
+                <td>Amplificador Marshall DSL40CR</td>
+                <td>00000005</td>
+                <td>Amplificadores</td>
+                <td>$650.000</td>
+                <td>0 en stock</td>
+                <td>
+                  <button class="btn-agregar">Agregar</button>
+                  <button class="btn-editar">Editar</button>
+                  <button class="btn-eliminar">Eliminar (1 unidad)</button>
+                </td>
+              </tr>
+              <tr>
+                <td>Micrófono Dinámico Shure SM58</td>
+                <td>00000006</td>
+                <td>Micrófonos</td>
+                <td>$115.000</td>
+                <td>25 en stock</td>
+                <td>
+                  <button class="btn-agregar">Agregar</button>
+                  <button class="btn-editar">Editar</button>
+                  <button class="btn-eliminar">Eliminar (1 unidad)</button>
+                </td>
+              </tr>
+              <tr>
+                <td>Pedal de Efectos Boss DS-1 Distortion</td>
+                <td>00000007</td>
+                <td>Pedales</td>
+                <td>$65.000</td>
+                <td>18 en stock</td>
+                <td>
+                  <button class="btn-agregar">Agregar</button>
+                  <button class="btn-editar">Editar</button>
+                  <button class="btn-eliminar">Eliminar (1 unidad)</button>
+                </td>
+              </tr>
+              <tr>
+                <td>Guitarra Acústica Martin DX1AE</td>
+                <td>00000008</td>
+                <td>Guitarras</td>
+                <td>$580.000</td>
+                <td>4 en stock</td>
+                <td>
+                  <button class="btn-agregar">Agregar</button>
+                  <button class="btn-editar">Editar</button>
+                  <button class="btn-eliminar">Eliminar (1 unidad)</button>
+                </td>
+              </tr>
+              <tr>
+                <td>Ukelele Soprano Kala KA-S</td>
+                <td>00000009</td>
+                <td>Accesorios</td>
+                <td>$45.000</td>
+                <td>15 en stock</td>
+                <td>
+                  <button class="btn-agregar">Agregar</button>
+                  <button class="btn-editar">Editar</button>
+                  <button class="btn-eliminar">Eliminar (1 unidad)</button>
+                </td>
+              </tr>
             </tbody>
           </table>
         </div>
       </section>
     </main>
+
+    <footer>
+      <div class="footer-info">
+        <p>&copy; 2023 Sonido Vivo. Todos los derechos reservados.</p>
+        <p class="estado-sistema">En línea</p>
+      </div>
+      <div class="footer-ayuda">
+        <a href="#">Ayuda</a>
+        <p>Versión 1.0.0 (Prototipo Parcial01)</p>
+      </div>
+    </footer>
   </body>
 </html>
