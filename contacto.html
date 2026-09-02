@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <main>
+        <section id = "contacto">
+            <h1>Contacto</h1>
+            <form id="form-contacto">
+                <label for="nombre">Nombre Completo:</label>
+                <input type="text" id="nombre" required>
+
+                <label for="email">Correo Electrónico:</label>
+                <input type="email" id="correo" required>
+
+                <label for="telefono">Telefono:</label>
+                <input type="tel" id="telefono required">
+
+                <label for="motivo">Motivo de la Consulta:</label>
+                <select id="motivo" required>
+                    <option value="">Seleccione una opción</option>
+                    <option>Consultas generales</option>
+                    <option>Reclamo</option>
+                    <option>Otro</option>
+                </select>
+
+                <label for="mensaje">Mensaje:</label>
+                <textarea id="mensaje" required></textarea>
+
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+    </main>
+    
+</body>
+</html>
