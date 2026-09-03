@@ -6,6 +6,7 @@
 
 body {
     background-color: rgb(207, 193, 228);
+    font-family:  'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
 }
 
 header {
@@ -76,7 +77,7 @@ h3 {
 .grilla-catalogo{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    gap: 30px;
     padding: 24px 0;
     max-width: 900px;
     margin: 0 auto;
@@ -93,12 +94,16 @@ h3 {
 }
 .precio{
     font-size: xxx-large;
+    font-weight: bold;
 }
 .marca{
-    font-size: x-large;
+    font-size: large;
 }
 .modelo{
-    font-size: x-large;
+    font-size: large;
+}
+.stock{
+    font-weight: bold;
 }
 
 
