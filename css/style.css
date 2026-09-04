@@ -115,6 +115,50 @@ h3 {
     font-weight: bold;
 }
 
+/* === Nosotros === */
+#main-nosotros {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 15px;
+    font-size: large;
+}
+.parrafo-nosotros {
+    line-height: 1.6;
+    margin-bottom: 24px;
+}
+
+.h3-nosotros{
+    color: black;
+}
+
+.sobre-desarrolladores{
+    text-align: left;
+    max-width: 800px;
+    margin: 10px auto;
+    padding: 0 15px;
+    font-size: large;
+
+}
+
+#grilla-desarrolladores{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    padding: 24px 0;
+    max-width: 900px;
+    margin: 0 auto;
+
+}
+
+.desarrollador{
+    background-color: rgb(200, 184, 224);
+    border-radius: 8px;
+    padding: 24px;
+    gap: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
 /* === Contacto === */
 #mensaje-confirmado {
     margin-top: 12px;
@@ -136,10 +180,6 @@ footer {
     padding: 10px;
 }
 
-.logo-footer {
-    width: 70px;
-    height: 70px;
-}
 /* === login === */
 .campo-error {
     border: 2px solid red;
