@@ -169,18 +169,6 @@ h3 {
     min-height: 1.2em;
 }
 
-
-/* === Pie de página === */
-footer {
-    background-color: rgb(142, 96, 125);
-    padding: 14px;
-}
-
-.footer-info p {
-    max-width: 280px;
-    padding: 10px;
-}
-
 /* === login === */
 
 .login-body {
@@ -379,4 +367,14 @@ footer {
 }
 td.stock-critico{
     color: #b90000;
+}
+/* === Pie de página === */
+footer {
+    background-color: rgb(142, 96, 125);
+    margin: 0 auto;
+    padding: 70px 80px;
+}
+#footer-info p{
+    font-size: small;
+    text-align: right;
 }
