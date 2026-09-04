@@ -4,32 +4,44 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Gestión de Inventario</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css" />
   </head>
-  <body>
-    <header>
-      <img src="img/logo.jpg" alt="logo de sonido vivo" class="logo-principal">
-      <h1>Sonido <br> Vivo</h1>
-      <nav>
-        <ul>
-          <li>Dashboards</li>
-          <li>Gestión de pedidos</li>
-          <li>Gestión de inventario</li>
-        </ul>
-      </nav>
-    </header>
+  <body class="vista-admin-body">
+    <div class="vista-admin-container">
+      <header>
+        <img
+          src="img/logo.jpg"
+          alt="logo de sonido vivo"
+          class="logo-principal"
+        />
 
-    <main>
-      <section id="admin-inventario">
-        <h2>Gestión de Inventario</h2>
+        <h1>
+          Sonido <br />
+          Vivo
+        </h1>
+
+        <nav>
+          <ul>
+            <li><a href="#">Dashboards</a></li>
+            <!-- hay que agregar el link a la pagina de dashboard y a las otras -->
+            <li><a href="#">Gestión de pedidos</a></li>
+            <li><a href="#">Gestión de inventario</a></li>
+          </ul>
+        </nav>
+
+        <!-- hay que agregar item para especificar el usuario y hacer cerrar sesion -->
+      </header>
+
+      <main>
         <section>
-          <h3>Filtros</h3>
-        </section>
-        <div>
-          <table>
-            <caption>
-              Inventario
-            </caption>
+          <h2>Gestión de Inventario</h2>
+          <section class="vista-admin-filtros">
+            <label for="filtros"></label>
+            <input type="text" id="filtros" name="filtros" placeholder="Buscar por nombre o código" />
+            <button class="admin-btn">Filtrar</button>
+          </section>
+
+          <table class="tabla-vista-admin">
             <thead>
               <tr>
                 <th scope="col">Nombre</th>
@@ -48,9 +60,11 @@
                 <td>$699.990</td>
                 <td>12 en stock</td>
                 <td>
-                  <button class="btn-agregar">Agregar</button>
-                  <button class="btn-editar">Editar</button>
-                  <button class="btn-eliminar">Eliminar (1 unidad)</button>
+                  <button class="admin-btn">Agregar</button>
+                  <button class="admin-btn">Editar</button>
+                  <button class="admin-btn">
+                    Eliminar (1 unidad)
+                  </button>
                 </td>
               </tr>
               <tr>
@@ -60,9 +74,11 @@
                 <td>$389.990</td>
                 <td>8 en stock</td>
                 <td>
-                  <button class="btn-agregar">Agregar</button>
-                  <button class="btn-editar">Editar</button>
-                  <button class="btn-eliminar">Eliminar (1 unidad)</button>
+                  <button class="admin-btn">Agregar</button>
+                  <button class="admin-btn">Editar</button>
+                  <button class="admin-btn">
+                    Eliminar (1 unidad)
+                  </button>
                 </td>
               </tr>
               <tr>
@@ -72,9 +88,11 @@
                 <td>$899.990</td>
                 <td>3 en stock</td>
                 <td>
-                  <button class="btn-agregar">Agregar</button>
-                  <button class="btn-editar">Editar</button>
-                  <button class="btn-eliminar">Eliminar (1 unidad)</button>
+                  <button class="admin-btn">Agregar</button>
+                  <button class="admin-btn">Editar</button>
+                  <button class="admin-btn">
+                    Eliminar (1 unidad)
+                  </button>
                 </td>
               </tr>
               <tr>
@@ -84,9 +102,11 @@
                 <td>$520.000</td>
                 <td>5 en stock</td>
                 <td>
-                  <button class="btn-agregar">Agregar</button>
-                  <button class="btn-editar">Editar</button>
-                  <button class="btn-eliminar">Eliminar (1 unidad)</button>
+                  <button class="admin-btn">Agregar</button>
+                  <button class="admin-btn">Editar</button>
+                  <button class="admin-btn">
+                    Eliminar (1 unidad)
+                  </button>
                 </td>
               </tr>
               <tr>
@@ -96,9 +116,11 @@
                 <td>$650.000</td>
                 <td>0 en stock</td>
                 <td>
-                  <button class="btn-agregar">Agregar</button>
-                  <button class="btn-editar">Editar</button>
-                  <button class="btn-eliminar">Eliminar (1 unidad)</button>
+                  <button class="admin-btn">Agregar</button>
+                  <button class="admin-btn">Editar</button>
+                  <button class="admin-btn">
+                    Eliminar (1 unidad)
+                  </button>
                 </td>
               </tr>
               <tr>
@@ -108,9 +130,11 @@
                 <td>$115.000</td>
                 <td>25 en stock</td>
                 <td>
-                  <button class="btn-agregar">Agregar</button>
-                  <button class="btn-editar">Editar</button>
-                  <button class="btn-eliminar">Eliminar (1 unidad)</button>
+                  <button class="admin-btn">Agregar</button>
+                  <button class="admin-btn">Editar</button>
+                  <button class="admin-btn">
+                    Eliminar (1 unidad)
+                  </button>
                 </td>
               </tr>
               <tr>
@@ -120,9 +144,11 @@
                 <td>$65.000</td>
                 <td>18 en stock</td>
                 <td>
-                  <button class="btn-agregar">Agregar</button>
-                  <button class="btn-editar">Editar</button>
-                  <button class="btn-eliminar">Eliminar (1 unidad)</button>
+                  <button class="admin-btn">Agregar</button>
+                  <button class="admin-btn">Editar</button>
+                  <button class="admin-btn">
+                    Eliminar (1 unidad)
+                  </button>
                 </td>
               </tr>
               <tr>
@@ -132,9 +158,11 @@
                 <td>$580.000</td>
                 <td>4 en stock</td>
                 <td>
-                  <button class="btn-agregar">Agregar</button>
-                  <button class="btn-editar">Editar</button>
-                  <button class="btn-eliminar">Eliminar (1 unidad)</button>
+                  <button class="admin-btn">Agregar</button>
+                  <button class="admin-btn">Editar</button>
+                  <button class="admin-btn">
+                    Eliminar (1 unidad)
+                  </button>
                 </td>
               </tr>
               <tr>
@@ -144,18 +172,19 @@
                 <td>$45.000</td>
                 <td>15 en stock</td>
                 <td>
-                  <button class="btn-agregar">Agregar</button>
-                  <button class="btn-editar">Editar</button>
-                  <button class="btn-eliminar">Eliminar (1 unidad)</button>
+                  <button class="admin-btn">Agregar</button>
+                  <button class="admin-btn">Editar</button>
+                  <button class="admin-btn">
+                    Eliminar (1 unidad)
+                  </button>
                 </td>
               </tr>
             </tbody>
           </table>
-        </div>
-      </section>
-    </main>
-
-    <footer>
+        </section>
+      </main>
+    </div>
+    <footer class="vista-admin-footer">
       <div class="footer-info">
         <p>&copy; 2023 Sonido Vivo. Todos los derechos reservados.</p>
         <p class="estado-sistema">En línea</p>
