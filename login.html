@@ -10,19 +10,24 @@
 
 </head>
 
-<body>
-    <form id="login" novalidate>
-        <label for="correo">Correo electrónico</label>
-        <input type="email" id="correo-login" required>
-        <span class="error" id="error-correo"></span>
+<body class="login-body">
+    <header id="header-login">
+        <img src="img/logo.jpg" alt="logo sonido vivo">
+    </header>
+    <main class="login-container">
+        <form id="login" novalidate>
+            <label for="correo-login">Correo electrónico</label>
+            <input type="email" id="correo-login" required>
+            <span class="error" id="error-correo"></span>
 
-        <label for="contrasena">Contraseña</label>
-        <input type="password" id="contrasena" required>
-        <span class="error" id="error-contrasena"></span>
+            <label for="contrasena">Contraseña</label>
+            <input type="password" id="contrasena" required>
+            <span class="error" id="error-contrasena"></span>
 
-        <button type="submit">Iniciar Sesion</button>
-        <p id="mensaje-confirmacion"></p>
-    </form>
+            <button class="button" type="submit">Iniciar Sesion</button>
+            <p id="mensaje-confirmacion"></p>
+        </form>
+    </main>
 </body>
 
 </html>
