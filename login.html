@@ -6,19 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio de sesion</title>
     <link rel="stylesheet" href="css/style.css">
+    <script src="js/funciones.js" defer></script>
+
 </head>
 
 <body>
     <form id="login" novalidate>
         <label for="correo">Correo electrónico</label>
-        <input type="email" id="correo" required>
+        <input type="email" id="correo-login" required>
+        <span class="error" id="error-correo"></span>
 
-        <label for="contrasena">Contraseña
-    </form></label>
-    <input type="contrasena" id="contrasena" required>
+        <label for="contrasena">Contraseña</label>
+        <input type="password" id="contrasena" required>
+        <span class="error" id="error-contrasena"></span>
 
-
-
+        <button type="submit">Iniciar Sesion</button>
+        <p id="mensaje-confirmacion"></p>
     </form>
 </body>
 

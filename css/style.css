@@ -140,3 +140,14 @@ footer {
     width: 70px;
     height: 70px;
 }
+/* === login === */
+.campo-error {
+    border: 2px solid red;
+    background-color: white;
+}
+
+.error {
+    color: red;
+    font-size: 15px;
+    display: block;
+}
