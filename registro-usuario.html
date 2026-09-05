@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de usuario</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/funciones.js" defer></script>
+
+</head>
+
+<body class="registro-body">
+    <main class="registro-container">
+        <form id="registro" novalidate>
+            <label for="correo-registro">Correo electrónico</label>
+            <input type="email" id="correo-registro" required>
+            <span class="error" id="error-registro"></span>
+
+            <label for="contrasena-registro">Contraseña</label>
+            <input type="password" id="contrasena-registro" required>
+            <span class="error" id="error-contrasena"></span>
+
+            <label for="contrasena-check">Confirmar contraseña</label>
+            <input type="password" id="contrasena-check" required>
+            <span class="error" id="error-contrasena"></span>
+
+            <button class="button" type="submit">Registrar</button>
+            <p id="mensaje-confirmacion"></p>
+        </form>
+    </main>
+</body>
+
+</html>
