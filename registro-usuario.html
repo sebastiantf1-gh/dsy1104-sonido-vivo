@@ -13,17 +13,41 @@
 <body class="registro-body">
     <main class="registro-container">
         <form id="registro" novalidate>
+            <label for="nombre">Nombre completo</label>
+            <input type="text" id="nombre" required>
+            <span class="error" id="error-nombre"></span>
+
             <label for="correo-registro">Correo electrónico</label>
             <input type="email" id="correo-registro" required>
-            <span class="error" id="error-registro"></span>
+            <span class="error" id="error-correo"></span>
 
             <label for="contrasena-registro">Contraseña</label>
             <input type="password" id="contrasena-registro" required>
-            <span class="error" id="error-contrasena"></span>
+            <span class="error" id="error-contrasena-registro"></span>
 
-            <label for="contrasena-check">Confirmar contraseña</label>
+            <label for="contrasena-check">Confirmar Contraseña</label>
             <input type="password" id="contrasena-check" required>
-            <span class="error" id="error-contrasena"></span>
+            <span class="error" id="error-contrasena-check"></span>
+
+            <label for="telefono">Telefono(opcional)</label>
+            <input type="text" id="telefono">
+
+            <label for="region">Región</label>
+            <select name="region" id="region">
+                <option value="">--Seleccione la region--</option>
+                <option>Metropolitana</option>
+                <option>Araucania</option>
+                <option>ñuble</option>
+            </select>
+
+            <select name="comuna" id="comuna">
+                <option value="">--Seleccione la comuna--</option>
+                <option>Santiago</option>
+                <option>Temuco</option>
+                <option>Chillan</option>
+            </select>
+
+
 
             <button class="button" type="submit">Registrar</button>
             <p id="mensaje-confirmacion"></p>
