@@ -215,3 +215,31 @@ function cargarTablaInventario() {
 }
 
 document.addEventListener('DOMContentLoaded', cargarTablaInventario);
+
+//logica para el listado de usuarios 
+const usuariosListado = [
+    { fecha: '05/09/2026', orden: 'S01001', nombre: 'Benjamin Vasquez', estado: 'Completado', total: '$200.000' },
+    { fecha: '04/09/2026', orden: 'S01002', nombre: 'Sebastian Toro', estado: 'Pendiente', total: '$10.000' },
+    { fecha: '03/09/2026', orden: 'S01003', nombre: 'Camilo Vera', estado: 'Cancelado', total: '$2.500' }
+]
+
+function cargarListadoUsuarios() {
+    const cuerpoTabla = document.querySelector('#tbody-user');
+    if (!cuerpoTabla) return;
+
+    cuerpoTabla.innerHTML = '';
+
+    usuariosListado.forEach(item => {
+        const fila = document.createElement('tr');
+        fila.innerHTML = `
+            <td>${item.fecha}</td>
+            <td>${item.orden}</td>
+            <td>${item.nombre}</td>
+            <td>${item.estado}</td>
+            <td>${item.total}</td>
+        `;
+        cuerpoTabla.appendChild(fila);
+    });
+}
+
+document.addEventListener('DOMContentLoaded', cargarListadoUsuarios);
