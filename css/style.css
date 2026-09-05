@@ -316,7 +316,6 @@ h3 {
 .vista-admin-filtros {
     margin-top: 20px;
     margin-bottom: 5px;
-
 }
 
 .vista-admin-filtros input {
@@ -364,6 +363,21 @@ h3 {
     border-color: #392D3B;
     border-style: solid;
     margin: 1px;
+}
+.admin-agregar-btn {
+    font-size: 75%;
+    padding: 10px;
+    border-radius: 6px;
+    border-color: #392D3B;
+    background-color: #D8ABDE;
+    border-style: solid;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.admin-contenedor-btn-agregar{
+    display: flex;
+    justify-content: flex-end;
 }
 
 .admin-btn:hover {
