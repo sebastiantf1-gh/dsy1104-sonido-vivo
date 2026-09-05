@@ -296,7 +296,25 @@ h3 {
     height: 25px;
 }
 
+/* === Listado usuario === */
+.user-container {
+    display: flex;
+    min-height: 100vh;
+}
 
+.user-container header {
+    width: 20vw;
+    border-right: 1px solid #6F5872;
+    background-color: #4D3D4F;
+    color: #e4e4e4;
+    display: flex;
+    padding: 20px;
+    flex-direction: column;
+}
+
+.user-body {
+    background-color: #392D3B;
+}
 
 /* === Vista Admin === */
 .vista-admin-container {
@@ -372,6 +390,7 @@ h3 {
     border-style: solid;
     margin: 1px;
 }
+
 .admin-agregar-btn {
     font-size: 75%;
     padding: 10px;
@@ -383,7 +402,8 @@ h3 {
     text-transform: uppercase;
     font-weight: bold;
 }
-.admin-contenedor-btn-agregar{
+
+.admin-contenedor-btn-agregar {
     display: flex;
     justify-content: flex-end;
 }

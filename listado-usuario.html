@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Listado-usuarios</title>
+    <link rel="stylesheet" href="css/style.css" />
+
+    <script src="js/funciones.js" defer></script>
+</head>
+
+<body class="user-body">
+    <div class="user-container">
+        <header>
+            <img src="img/logo.jpg" alt="logo de sonido vivo" class="logo-principal" />
+
+            <h1>
+                Sonido <br />
+                Vivo
+            </h1>
+
+            <nav>
+                <ul>
+                    <li><a href="#">Dashboards</a></li>
+                    <!-- hay que agregar el link a la pagina de dashboard y a las otras -->
+                    <li><a href="#">Gestión de pedidos</a></li>
+                    <li><a href="#">Gestión de inventario</a></li>
+                </ul>
+            </nav>
+
+            <!-- hay que agregar item para especificar el usuario y hacer cerrar sesion -->
+        </header>
+
+        <main>
+            <section>
+                <h2>Listado de usuarios</h2>
+                <div class="admin-contenedor-btn-agregar">
+                    <a href="registro-usuario.html" class="admin-agregar-btn">Agregar usuario</a>
+                </div>
+
+                <table class="tabla-vista-admin">
+                    <thead>
+                        <tr>
+                            <th scope="col">Fecha</th>
+                            <th scope="col">orden</th>
+                            <th scope="col">nombre</th>
+                            <th scope="col">estado</th>
+                            <th scope="col">total</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbody-user">
+                        <!-- Aquí se llenará dinámicamente con JavaScript -->
+                    </tbody>
+                </table>
+            </section>
+        </main>
+    </div>
+    <footer class="footer-user">
+        <div class="footer-info">
+            <p>&copy; 2023 Sonido Vivo. Todos los derechos reservados.</p>
+            <p class="estado-sistema">En línea</p>
+        </div>
+        <div class="footer-ayuda">
+            <p>Versión 1.0.0 (Prototipo Parcial01)</p>
+        </div>
+    </footer>
+</body>
+
+</html>
