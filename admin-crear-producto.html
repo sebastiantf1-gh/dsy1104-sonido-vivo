@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuevo Producto</title>
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="js/funciones.js" defer></script>
+
+</head>
+<body class="vista-admin-body">
+    <div class="vista-admin-container">
+        <header>
+            <img
+            src="img/logo.jpg"
+            alt="logo de sonido vivo"
+            class="logo-principal"/>
+
+            <h1>
+                Sonido <br />
+                Vivo
+            </h1>
+        
+            <nav>
+                <ul>
+                    <li><a href="#">Dashboards</a></li>
+                    <!-- hay que agregar el link a la pagina de dashboard y a las otras -->
+                    <li><a href="#">Gestión de usuarios</a></li>
+                    <li><a href="admin-inventario.html">Gestión de inventario</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <h2>Crear Producto</h2>
+
+            
+            <form novalidate>
+                <h3>Registrar Producto</h3>
+
+                <p>Los campos obligatorios van seguidos de <strong> <abbr title="required">*</abbr></strong></p>
+                
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Ingrese el nombre del producto." required>
+                
+                <label for="descripcion">Descripción:</label>
+                <input type="text" id="descripcion" name="descripcion" placeholder="Ingrese la descripcion del producto.">
+                
+                <label for="precio">Precio:</label>
+                <input type="number" id="precio" name="precio" placeholder="Ingrese el valor del producto." required>
+                
+                <label for="stock">Stock:</label>
+                <input type="number" id="stock" name="stock" placeholder="Ingrese el stock actual del producto." required>
+                
+                <label for="stock-critico">Stock critico:</label>
+                <input type="number" id="stock-critico" name="stock-critico" placeholder="Ingrese el stock minimo del producto.">
+                
+                <label for="categoria"><span>Categoria:</span></label>
+                <select name="categoria" id="categoria" required>
+                    <option value="guitarras-acusticas">Guitarras Acústicas</option>
+                    <option value="guitarras-electricas">Guitarras Eléctricas</option>
+                    <option value="bajos-electricos">Bajos Eléctricos</option>
+                    <option value="baterias">Baterías</option>
+                    <option value="tecladosypianos">Teclados y Pianos</option>
+                    <option value="amplificadores">Amplificadores</option>
+                    <option value="microfonos">Micrófonos</option>
+                    <option value="pedales-efecto">Pedales de Efectos</option>
+                    <option value="accesorios">Accesorios</option>
+                    <option value="estudioygrabacion">Estudio y Grabación</option>
+                </select>
+
+                <label for="imagen">Imagen:</label>
+                <input type="file" id="imagen" accept="image/*">
+
+                <button type="submit">Ingresar producto</button>
+
+            </form>
+            
+        </main>
+    </div>
+    <footer class="vista-admin-footer">
+        <div class="footer-info">
+        <p>&copy; 2023 Sonido Vivo. Todos los derechos reservados.</p>
+        <p class="estado-sistema">En línea</p>
+        </div>
+        <div class="footer-ayuda">
+        <a href="#">Ayuda</a>
+        <p>Versión 1.0.0 (Prototipo Parcial01)</p>
+        </div>
+    </footer>
+</body>
+</html>
