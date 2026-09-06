@@ -36,28 +36,34 @@
             <h2>Editar Producto</h2>
 
             <div class="caja-formulario">
-                <form class="form-admin" novalidate >
+                <form class="form-admin" id="form-editar-producto" novalidate>
                     <h3>Editar producto: 001</h3>
 
                     <p>Los campos obligatorios van seguidos de <strong> <abbr title="required">*</abbr></strong></p>
 
                     <label for="nombre">Nombre:</label>
                     <input type="text" id="nombre" name="nombre" placeholder="Guitarra Eléctrica Fender Stratocaster" required>
+                    <span class="error-producto" id="error-nombre"></span>
 
                     <label for="descripcion">Descripción:</label>
                     <input type="text" id="descripcion" name="descripcion" placeholder="Tapa de abeto, aros y fondo de meranti. Ideal para iniciantes">
+                    <span class="error-producto" id="error-descripcion"></span>
 
                     <label for="precio">Precio:<strong> <abbr title="required">*</abbr></strong></label>
                     <input type="number" id="precio" name="precio" placeholder="699990" required>
+                    <span class="error-producto" id="error-precio"></span>
 
-                    <label for="stock">Stock:</label>
+                    <label for="stock">Stock:<strong> <abbr title="required">*</abbr></strong></label>
                     <input type="number" id="stock" name="stock" placeholder="10" required>
+                    <span class="error-producto" id="error-stock"></span>
 
                     <label for="stock-critico">Stock critico:</label>
                     <input type="number" id="stock-critico" name="stock-critico" placeholder="3">
+                    <span class="error-producto" id="error-stock-critico"></span>
 
-                    <label for="categoria"><span>Categoria:</span></label>
+                    <label for="categoria"><span>Categoria:<strong><abbr title="required">*</abbr></strong></span></label>
                     <select name="categoria" id="categoria" required>
+                        <option value="">--Seleccione una categoría--</option>
                         <option value="guitarras-acusticas">Guitarras Acústicas</option>
                         <option value="guitarras-electricas">Guitarras Eléctricas</option>
                         <option value="bajos-electricos">Bajos Eléctricos</option>
@@ -69,12 +75,15 @@
                         <option value="accesorios">Accesorios</option>
                         <option value="estudioygrabacion">Estudio y Grabación</option>
                     </select>
+                    <span class="error-producto" id="error-categoria"></span>
 
                     <label for="imagen">Imagen:</label>
                     <img class="admin-image-prod" src="https://http2.mlstatic.com/D_NQ_NP_2X_995530-MLA91393909737_092025-F.webp" alt="https://http2.mlstatic.com/D_NQ_NP_2X_995530-MLA91393909737_092025-F.webp">
                     <input type="file" id="imagen" accept="image/*">
+                    <span class="error-producto" id="error-imagen"></span>
 
                     <button type="submit" class="admin-btn">Aplicar cambios</button>
+                    <p id="mensaje-confirmacion-editar"></p>
 
                 </form>
             </div>
