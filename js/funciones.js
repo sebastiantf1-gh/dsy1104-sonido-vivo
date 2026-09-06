@@ -567,7 +567,7 @@ if (formularioUsuario) {
 
         if (contrasenaRegistro.value.length < 4 || contrasenaRegistro.value.length > 10) {
             contrasenaRegistro.classList.add('campo-error');
-            document.querySelector('#error-contrasena-registro').textContent = "La cantidad de caracteres es entre 4 y 10"
+            document.querySelector('#error-contrasena-user').textContent = "La cantidad de caracteres es entre 4 y 10"
             formularioUserValido = false;
         } else {
             contrasenaRegistro.classList.remove('campo-error')
@@ -606,6 +606,137 @@ if (formularioUsuario) {
 
         if (formularioUserValido) {
             document.querySelector('#mensaje-confirmacion').textContent = 'Registrado correctamente'
+        }
+    })
+}
+
+//Logica para el admin-editar-usuario.html
+const formularioEditarUsuario = document.querySelector('#editar-usuario');
+if (formularioEditarUsuario) {
+    const region = document.querySelector('#region-user');
+    const comuna = document.querySelector('#comuna-user');
+    const comunasRegion = {
+        'Metropolitana': ['Santiago'],
+        'Araucania': ['Temuco'],
+        'Ñuble': ['Chillan']
+    };
+    region.addEventListener('change', function () {
+        const regionSeleccionada = this.value;
+        comuna.innerHTML = '<option value="">--Seleccione la comuna--</option>';
+
+        if (regionSeleccionada && comunasRegion[regionSeleccionada]) {
+            comunasRegion[regionSeleccionada].forEach(function (nombreComuna) {
+                const opcion = document.createElement('option');
+                opcion.value = nombreComuna;
+                opcion.textContent = nombreComuna;
+                comuna.appendChild(opcion);
+            });
+        }
+    });
+
+    function cargarDatosPrueba() {
+        document.getElementById('nombre-user').value = 'Benjamin Vasquez';
+        document.getElementById('run').value = '204501807';
+        document.getElementById('correo-user').value = 'benjam@duoc.cl';
+        document.getElementById('telefono-user').value = '+56948999989';
+        document.getElementById('region-user').value = 'Metropolitana';
+        document.getElementById('comuna-user').value = 'Santiago';
+        document.getElementById('tipo-usuario').value = 'Cliente';
+    }
+    cargarDatosPrueba();
+
+    formularioEditarUsuario.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        const nombre = document.querySelector('#nombre-user');
+        const correoRegistro = document.querySelector('#correo-user');
+        const contrasenaRegistro = document.querySelector('#contrasena-user');
+        const contrasenaCheck = document.querySelector('#contrasena-check-user');
+        const region = document.querySelector('#region-user');
+        const comuna = document.querySelector('#comuna-user');
+        const run = document.querySelector('#run');
+        const tipoUsuario = document.querySelector('#tipo-usuario');
+
+
+        let formularioEditarUserValido = true;
+        const patronCorreoRegistro = /^[^\s@]+@(duoc\.cl|profesor\.duoc\.cl|gmail\.com)$/;
+        const patronRun = /^[0-9]{7,8}[0-9kK]$/;
+
+        if (nombre.value.length > 50 || nombre.value.trim() === '') {
+            nombre.classList.add('campo-error');
+            document.querySelector('#error-nombre').textContent = "Supera la cantidad de caracteres minimos o esta vacio"
+            formularioEditarUserValido = false;
+        } else {
+            nombre.classList.remove('campo-error')
+            document.querySelector('#error-nombre').textContent = ''
+        }
+        if (!patronRun.test(run.value.trim())) {
+            run.classList.add('campo-error');
+            document.querySelector('#error-run').textContent = "Ingrese un RUN valido"
+            formularioEditarUserValido = false;
+        } else {
+            run.classList.remove('campo-error');
+            document.querySelector('#error-run').textContent = '';
+        }
+
+
+        if (!patronCorreoRegistro.test(correoRegistro.value.trim()) || correoRegistro.value.length > 100) {
+            correoRegistro.classList.add('campo-error');
+            document.querySelector('#error-correo').textContent = "Formato de correo no valido"
+            formularioEditarUserValido = false;
+        } else {
+            correoRegistro.classList.remove('campo-error');
+            document.querySelector('#error-correo').textContent = ''
+        }
+
+        if (contrasenaRegistro.value.trim() !== '' || contrasenaCheck.value.trim() !== '') {
+            if (contrasenaRegistro.value.length < 4 || contrasenaRegistro.value.length > 10) {
+                contrasenaRegistro.classList.add('campo-error');
+                document.querySelector('#error-contrasena-user').textContent = "La cantidad de caracteres es entre 4 y 10";
+                formularioEditarUserValido = false;
+            } else {
+                contrasenaRegistro.classList.remove('campo-error');
+                document.querySelector('#error-contrasena-user').textContent = '';
+            }
+
+            if (contrasenaRegistro.value !== contrasenaCheck.value) {
+                contrasenaCheck.classList.add('campo-error');
+                document.querySelector('#error-contrasena-check-user').textContent = "Las contrasenas deben coincidir";
+                formularioEditarUserValido = false;
+            } else {
+                contrasenaCheck.classList.remove('campo-error');
+                document.querySelector('#error-contrasena-check-user').textContent = '';
+            }
+        } else {
+            contrasenaRegistro.classList.remove('campo-error');
+            contrasenaCheck.classList.remove('campo-error');
+            document.querySelector('#error-contrasena-user').textContent = '';
+            document.querySelector('#error-contrasena-check-user').textContent = '';
+        }
+
+        if (region.value.trim() === '') {
+            region.classList.add('campo-error');
+            formularioEditarUserValido = false;
+        } else {
+            region.classList.remove('campo-error');
+        }
+
+        if (comuna.value.trim() === '') {
+            comuna.classList.add('campo-error');
+            formularioEditarUserValido = false;
+        } else {
+            comuna.classList.remove('campo-error');
+        }
+
+        if (tipoUsuario.value.trim() === '') {
+            tipoUsuario.classList.add('campo-error');
+            formularioEditarUserValido = false;
+        } else {
+            tipoUsuario.classList.remove('campo-error');
+        }
+
+        if (formularioEditarUserValido) {
+            document.querySelector('#mensaje-confirmacion').textContent = 'Editado correctamente'
         }
     })
 }
