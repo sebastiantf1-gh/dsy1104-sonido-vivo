@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blogs - Sonido Vivo</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/funciones.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="img/logo.jpg" alt="Logo de Sonido Vivo" id="logo-catalogo">
+            <h2>Sonido Vivo</h2>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="catalogo.html">Productos</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="blogs.html" class="activo">Blogs</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+        <div class="carrito-nav">
+            <a href="carrito.html">🛒 Carrito (<span id="contador-carrito">0</span>)</a>
+        </div>
+    </header>
+
+    <main class="main-blogs">
+        <h1 class="titulo-blogs">NOTICIAS IMPORTANTES</h1>
+        
+        <section class="contenedor-blogs">
+            
+            <!-- articulo de blog 1 -->
+            <article class="tarjeta-blog">
+                <div class="info-blog">
+                    <h2>CASO CURIOSO #1: La guitarra acústica y la inmersión narrativa</h2>
+                    <p class="desc-corta-blog">
+                        Exploramos cómo los juegos de mundo abierto y ritmo pausado utilizan guitarras de 
+                        cuerdas de acero, banjos y percusiones sutiles para crear atmósferas profundas. 
+                        Un repaso a los paisajes sonoros que acompañan la soledad y la exploración del jugador.
+                    </p>
+                    <!-- El botón lleva al detalle del primer blog -->
+                    <a href="detalle-blog1.html" class="btn-ver-caso">VER CASO</a>
+                </div>
+                <div class="imagen-blog">
+                    <img src="img/blog-acustica.png" alt="Guitarra acústica en paisaje">
+                </div>
+            </article>
+
+            <!-- articulo de blog 2 -->
+            <article class="tarjeta-blog">
+                <div class="info-blog">
+                    <h2>CASO CURIOSO #2: El hardware detrás del Retro Gaming</h2>
+                    <p class="desc-corta-blog">
+                        Un viaje por la nostalgia sonora. Exploramos cómo los chips de sonido de las consolas 
+                        clásicas limitaban pero a la vez potenciaban la creatividad musical, sentando las bases de 
+                        la música electrónica de 8 y 16 bits que hoy coleccionamos.
+                    </p>
+                    <a href="detalle-blog2.html" class="btn-ver-caso">VER CASO</a>
+                </div>
+                <div class="imagen-blog">
+                    <img src="img/blog-retro.png" alt="Sintetizadores y consolas retro">
+                </div>
+            </article>
+
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Sonido Vivo - Tienda de Instrumentos Musicales. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

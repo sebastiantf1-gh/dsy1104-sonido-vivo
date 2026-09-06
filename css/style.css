@@ -263,7 +263,7 @@ header nav ul li a.activo {
     background-color: rgb(104, 68, 91);
 }
 
-/* === Media Queries === */
+/* === Media Queries (Catalogo) === */
 
 /* Para Tabletas (≥ 768 px) */
 @media (min-width: 768px) {
@@ -476,7 +476,7 @@ header nav ul li a.activo {
     height: 150px;
 }
 
-/* ======= Media Queries (Responsividad Detalle Producto) ====== */
+/* ======= Media Queries (Detalle Producto) ====== */
 
 /* Tabletas (≥ 768 px) */
 @media (min-width: 768px) {
@@ -618,6 +618,117 @@ header nav ul li a.activo {
         grid-template-columns: repeat(3, 1fr); /* Pasa a 3 columnas automáticamente */
     }
 }
+
+
+
+/* ========================================== */
+/* ============== BLOGS ================= */
+
+/* Contenedor principal */
+.main-blogs {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.titulo-blogs {
+    text-align: center;
+    color: #200347;
+    margin-bottom: 40px;
+    font-size: 2.2rem;
+    text-transform: uppercase;
+}
+
+.contenedor-blogs {
+    display: flex;
+    flex-direction: column;
+    gap: 40px; /* Separación grande entre cada noticia */
+}
+
+/* Tarjeta individual de la noticia */
+.tarjeta-blog {
+    display: flex;
+    background-color: rgb(165, 114, 146); /* Fondo claro para contrastar */
+    border-radius: 8px;
+    overflow: hidden; /* Asegura que la imagen no se salga de los bordes redondeados */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Lado izquierdo: Información */
+.info-blog {
+    flex: 1; /* Ocupa el espacio disponible */
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.info-blog h2 {
+    color: #200347;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.desc-corta-blog {
+    color: #0e0d0d;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+.btn-ver-caso {
+    display: inline-block;
+    align-self: flex-start; /* Evita que el botón ocupe todo el ancho */
+    background-color: white;
+    color: #200347;
+    border: 2px solid #200347;
+    padding: 10px 25px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: all 0.3s;
+}
+
+.btn-ver-caso:hover {
+    background-color: #200347;
+    color: white;
+}
+
+/* Lado derecho: Imagen */
+.imagen-blog {
+    flex: 1; /* Ocupa la otra mitad del espacio */
+    min-width: 300px; /* Evita que la imagen se encoja demasiado en pantallas medianas */
+}
+
+.imagen-blog img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* ======= Media Queries (Blogs) ====== */
+
+/* Para celulares y tabletas pequeñas (hasta 768px) */
+@media (max-width: 768px) {
+    .tarjeta-blog {
+        flex-direction: column-reverse; /* Pone la imagen arriba y el texto abajo */
+    }
+    
+    .imagen-blog {
+        min-width: 100%;
+        height: 250px; /* Altura fija para la imagen en móvil */
+    }
+    
+    .btn-ver-caso {
+        align-self: center; /* Centra el botón en móviles */
+        width: 100%;
+        text-align: center;
+    }
+}
+
+
 
 /* ========================================== */
 /* ============== CONTACTO ================= */
