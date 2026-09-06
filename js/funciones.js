@@ -840,3 +840,103 @@ if (formularioProducto) {
         }
     });
 }
+// Logica para Editar Producto
+const formularioEditarProducto = document.querySelector('#form-editar-producto');
+
+if (formularioEditarProducto) {
+    formularioEditarProducto.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        const nombre = formularioEditarProducto.querySelector('#nombre');
+        const descripcion = formularioEditarProducto.querySelector('#descripcion');
+        const precio = formularioEditarProducto.querySelector('#precio');
+        const stock = formularioEditarProducto.querySelector('#stock');
+        const stockCritico = formularioEditarProducto.querySelector('#stock-critico');
+        const categoria = formularioEditarProducto.querySelector('#categoria');
+        const imagen = formularioEditarProducto.querySelector('#imagen');
+
+        let esValido = true;
+
+        // Validar Nombre
+        if (nombre.value.trim() === '' || nombre.value.length > 100) {
+            nombre.classList.add('campo-error');
+            formularioEditarProducto.querySelector('#error-nombre').textContent = "Ingrese un nombre válido (máx 100 caracteres).";
+            esValido = false;
+        } else {
+            nombre.classList.remove('campo-error');
+            formularioEditarProducto.querySelector('#error-nombre').innerHTML = '&nbsp;';
+        }
+
+        // Validar Descripción
+        if (descripcion.value.trim() !== '' && descripcion.value.length > 250) {
+            descripcion.classList.add('campo-error');
+            formularioEditarProducto.querySelector('#error-descripcion').textContent = "La descripción no puede superar 250 caracteres.";
+            esValido = false;
+        } else {
+            descripcion.classList.remove('campo-error');
+            formularioEditarProducto.querySelector('#error-descripcion').innerHTML = '&nbsp;';
+        }
+
+        // Validar Precio
+        if (precio.value.trim() === '' || Number(precio.value) <= 0) {
+            precio.classList.add('campo-error');
+            formularioEditarProducto.querySelector('#error-precio').textContent = "Ingrese un precio mayor a 0.";
+            esValido = false;
+        } else {
+            precio.classList.remove('campo-error');
+            formularioEditarProducto.querySelector('#error-precio').innerHTML = '&nbsp;';
+        }
+
+        // Validar Stock
+        if (stock.value.trim() === '' || Number(stock.value) < 0) {
+            stock.classList.add('campo-error');
+            formularioEditarProducto.querySelector('#error-stock').textContent = "Ingrese un stock válido (0 o mayor).";
+            esValido = false;
+        } else {
+            stock.classList.remove('campo-error');
+            formularioEditarProducto.querySelector('#error-stock').innerHTML = '&nbsp;';
+        }
+
+        // Validar Stock Crítico
+        if (stockCritico.value.trim() !== '' && Number(stockCritico.value) < 0) {
+            stockCritico.classList.add('campo-error');
+            formularioEditarProducto.querySelector('#error-stock-critico').textContent = "El stock crítico no puede ser negativo.";
+            esValido = false;
+        } else {
+            stockCritico.classList.remove('campo-error');
+            formularioEditarProducto.querySelector('#error-stock-critico').innerHTML = '&nbsp;';
+        }
+
+        // Validar Categoría
+        if (categoria.value.trim() === '') {
+            categoria.classList.add('campo-error');
+            formularioEditarProducto.querySelector('#error-categoria').textContent = "Seleccione una categoría.";
+            esValido = false;
+        } else {
+            categoria.classList.remove('campo-error');
+            formularioEditarProducto.querySelector('#error-categoria').innerHTML = '&nbsp;';
+        }
+
+        // Validar Imagen (Opcional en edición, pero si sube archivo verificar extensión)
+        if (imagen.files.length > 0) {
+            const archivo = imagen.files[0];
+            const extensionesValidas = ['image/jpeg', 'image/png', 'image/webp'];
+            if (!extensionesValidas.includes(archivo.type)) {
+                imagen.classList.add('campo-error');
+                formularioEditarProducto.querySelector('#error-imagen').textContent = "Formato no permitido (Use JPG, PNG o WEBP).";
+                esValido = false;
+            } else {
+                imagen.classList.remove('campo-error');
+                formularioEditarProducto.querySelector('#error-imagen').innerHTML = '&nbsp;';
+            }
+        } else {
+            imagen.classList.remove('campo-error');
+            formularioEditarProducto.querySelector('#error-imagen').innerHTML = '&nbsp;';
+        }
+
+        // Confirmación
+        if (esValido) {
+            formularioEditarProducto.querySelector('#mensaje-confirmacion-editar').textContent = 'Cambios guardados correctamente.';
+        }
+    });
+}
