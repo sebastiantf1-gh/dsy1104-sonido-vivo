@@ -500,52 +500,124 @@ header nav ul li a.activo {
 }
 
 
-/* === Nosotros === */
-#main-nosotros {
-    max-width: 800px;
+
+/* ========================================== */
+/* ============== NOSOTROS ================= */
+
+/* Contenedor principal */
+.main-nosotros {
+    max-width: 1000px;
     margin: 40px auto;
-    padding: 0 15px;
-    font-size: large;
+    padding: 0 20px;
 }
 
-.parrafo-nosotros {
-    line-height: 1.6;
-    margin-bottom: 24px;
+.titulo-nosotros {
+    text-align: center;
+    color: #200347;
+    margin-bottom: 40px;
+    font-size: 2.5rem;
 }
 
-.h3-nosotros {
-    color: black;
+/* --- Sección 1: Sobre la Empresa --- */
+.sobre-empresa {
+    margin-bottom: 60px;
 }
 
-.sobre-desarrolladores {
+.contenido-empresa {
+    display: flex;
+    flex-direction: column;
+    gap: 25px; /* Espaciado uniforme entre cada punto */
+}
+
+/* Diseño de tarjeta para cada bloque de información */
+.info-bloque {
+    background-color: white;
+    padding: 25px 30px;
+    border-radius: 8px;
+    border-left: 6px solid rgb(142, 96, 125); /* Borde izquierdo con color */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s;
+}
+
+.info-bloque:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.info-bloque h2 {
+    color: #4D3D4F;
+    font-size: 1.4rem;
+    margin-bottom: 15px;
     text-align: left;
-    max-width: 800px;
-    margin: 10px auto;
-    padding: 0 15px;
-    font-size: large;
-
 }
 
-#grilla-desarrolladores {
+.info-bloque p {
+    line-height: 1.7;
+    color: #333;
+    font-size: 1.05rem;
+}
+
+/* --- Sección 2: Equipo de Desarrollo --- */
+.sobre-desarrolladores {
+    text-align: center;
+    padding-top: 40px;
+    border-top: 2px solid #b08bb5; /* Separador visual */
+}
+
+.sobre-desarrolladores h2 {
+    color: #200347;
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.desc-desarrolladores {
+    font-size: 1.1rem;
+    color: #333;
+    max-width: 700px;
+    margin: 0 auto 40px auto;
+    line-height: 1.6;
+}
+
+/* Grilla Responsiva para los Desarrolladores */
+.grilla-desarrolladores {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr; /* 1 sola columna en celulares */
     gap: 30px;
-    padding: 24px 0;
-    max-width: 900px;
-    margin: 0 auto;
-
 }
 
+/* Tarjetas de cada integrante */
 .desarrollador {
     background-color: rgb(200, 184, 224);
     border-radius: 8px;
-    padding: 24px;
-    gap: 10px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+    padding: 30px 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     text-align: center;
+    transition: transform 0.3s ease;
 }
 
+.desarrollador:hover {
+    transform: translateY(-5px);
+}
 
+.desarrollador h3 {
+    color: #200347;
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+}
+
+.desarrollador p {
+    color: #4D3D4F;
+    font-weight: bold;
+    margin: 0;
+}
+
+/* ======= Media Queries (Nosotros) ====== */
+
+/* Para Tabletas y Escritorio (≥ 768 px) */
+@media (min-width: 768px) {
+    .grilla-desarrolladores {
+        grid-template-columns: repeat(3, 1fr); /* Pasa a 3 columnas automáticamente */
+    }
+}
 
 /* ========================================== */
 /* ============== CONTACTO ================= */
