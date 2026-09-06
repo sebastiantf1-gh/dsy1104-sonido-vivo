@@ -1,27 +1,27 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-    <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nuevo Producto</title>
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/style.css">
 
     <script src="js/funciones.js" defer></script>
-    </head>
-    <body class="vista-admin-body">
-        <div class="vista-admin-container">
-            <header>
+
+</head>
+<body class="vista-admin-body">
+    <div class="vista-admin-container">
+        <header>
             <img
-                src="img/logo.jpg"
-                alt="logo de sonido vivo"
-                class="logo-principal"
-            />
+            src="img/logo.jpg"
+            alt="logo de sonido vivo"
+            class="logo-principal"/>
 
             <h1>
                 Sonido <br />
                 Vivo
             </h1>
-
+        
             <nav>
                 <ul>
                     <li><a href="#">Dashboards</a></li>
@@ -30,161 +30,75 @@
                     <li><a href="admin-inventario.html">Gestión de inventario</a></li>
                 </ul>
             </nav>
-            </header>
+        </header>
 
-            <main>
+        <main>
             <h2>Crear Producto</h2>
 
             <div class="caja-formulario">
-                <form class="form-admin" id="crear-producto" novalidate>
+                <form class="form-admin" id="form-producto" novalidate >
                     <h3>Registrar Producto</h3>
 
-                    <p>
-                    Los campos obligatorios van seguidos de
-                    <strong> <abbr title="required">*</abbr></strong>
-                    </p>
+                    <p>Los campos obligatorios van seguidos de <strong> <abbr title="required">*</abbr></strong></p>
 
                     <label for="nombre">Nombre:</label>
-                    <input
-                    type="text"
-                    id="nombre"
-                    name="nombre"
-                    placeholder="Ingrese el nombre del producto."
-                    required
-                    />
-                    <span
-                    id="error-nombre"
-                    class="error-mensaje"
-                    style="
-                        color: red;
-                        font-size: 0.85rem;
-                        display: block;
-                        margin-bottom: 10px;
-                    "
-                    ></span>
+                    <input type="text" id="nombre" name="nombre" placeholder="Ingrese el nombre del producto." required>
+                    <span class="error-producto" id="error-nombre"></span>
 
                     <label for="descripcion">Descripción:</label>
-                    <input
-                    type="text"
-                    id="descripcion"
-                    name="descripcion"
-                    placeholder="Ingrese la descripcion del producto."
-                    />
+                    <input type="text" id="descripcion" name="descripcion" placeholder="Ingrese la descripcion del producto.">
+                    <span class="error-producto" id="error-descripcion"></span>
 
                     <label for="precio">Precio:</label>
-                    <input
-                    type="number"
-                    id="precio"
-                    name="precio"
-                    placeholder="Ingrese el valor del producto."
-                    required
-                    />
-                    <span
-                    id="error-precio"
-                    class="error-mensaje"
-                    style="
-                        color: red;
-                        font-size: 0.85rem;
-                        display: block;
-                        margin-bottom: 10px;
-                    "
-                    ></span>
+                    <input type="number" id="precio" name="precio" placeholder="Ingrese el valor del producto." required>
+                    <span class="error-producto" id="error-precio"></span>
 
                     <label for="stock">Stock:</label>
-                    <input
-                    type="number"
-                    id="stock"
-                    name="stock"
-                    placeholder="Ingrese el stock actual del producto."
-                    required
-                    />
-                    <span
-                    id="error-stock"
-                    class="error-mensaje"
-                    style="
-                        color: red;
-                        font-size: 0.85rem;
-                        display: block;
-                        margin-bottom: 10px;
-                    "
-                    ></span>
+                    <input type="number" id="stock" name="stock" placeholder="Ingrese el stock actual del producto." required>
+                    <span class="error-producto" id="error-stock"></span>
 
                     <label for="stock-critico">Stock critico:</label>
-                    <input
-                    type="number"
-                    id="stock-critico"
-                    name="stock-critico"
-                    placeholder="Ingrese el stock minimo del producto."
-                    />
-                    <span
-                    id="error-stock-critico"
-                    class="error-mensaje"
-                    style="
-                        color: red;
-                        font-size: 0.85rem;
-                        display: block;
-                        margin-bottom: 10px;
-                    "
-                    ></span>
+                    <input type="number" id="stock-critico" name="stock-critico" placeholder="Ingrese el stock minimo del producto.">
+                    <span class="error-producto" id="error-stock-critico"></span>
 
                     <label for="categoria"><span>Categoria:</span></label>
                     <select name="categoria" id="categoria" required>
-                    <!-- Opción vacía agregada para forzar la validación -->
-                    <option value="">-- Seleccione una categoría --</option>
-                    <option value="guitarras-acusticas">Guitarras Acústicas</option>
-                    <option value="guitarras-electricas">Guitarras Eléctricas</option>
-                    <option value="bajos-electricos">Bajos Eléctricos</option>
-                    <option value="baterias">Baterías</option>
-                    <option value="tecladosypianos">Teclados y Pianos</option>
-                    <option value="amplificadores">Amplificadores</option>
-                    <option value="microfonos">Micrófonos</option>
-                    <option value="pedales-efecto">Pedales de Efectos</option>
-                    <option value="accesorios">Accesorios</option>
-                    <option value="estudioygrabacion">Estudio y Grabación</option>
+                        <option value="">--Seleccione una categoría--</option>
+                        <option value="guitarras-acusticas">Guitarras Acústicas</option>
+                        <option value="guitarras-electricas">Guitarras Eléctricas</option>
+                        <option value="bajos-electricos">Bajos Eléctricos</option>
+                        <option value="baterias">Baterías</option>
+                        <option value="tecladosypianos">Teclados y Pianos</option>
+                        <option value="amplificadores">Amplificadores</option>
+                        <option value="microfonos">Micrófonos</option>
+                        <option value="pedales-efecto">Pedales de Efectos</option>
+                        <option value="accesorios">Accesorios</option>
+                        <option value="estudioygrabacion">Estudio y Grabación</option>
                     </select>
-                    <span
-                    id="error-categoria"
-                    class="error-mensaje"
-                    style="
-                        color: red;
-                        font-size: 0.85rem;
-                        display: block;
-                        margin-bottom: 10px;
-                    "
-                    ></span>
+                    <span class="error-producto" id="error-categoria"></span>
+
 
                     <label for="imagen">Imagen:</label>
-                    <input type="file" id="imagen" accept="image/*" />
-                    <span
-                    id="error-imagen"
-                    class="error-mensaje"
-                    style="
-                        color: red;
-                        font-size: 0.85rem;
-                        display: block;
-                        margin-bottom: 10px;
-                    "
-                    ></span>
+                    <input type="file" id="imagen" accept="image/*">
+                    <span class="error-producto" id="error-imagen"></span>
+
 
                     <button type="submit" class="admin-btn">Ingresar producto</button>
+                    <p id="mensaje-confirmacion-producto"></p>
 
-                    <p
-                    id="mensaje-confirmacion"
-                    style="color: green; font-weight: bold; margin-top: 10px"
-                    ></p>
                 </form>
             </div>
-            </main>
+        </main>
+    </div>
+    <footer class="vista-admin-footer">
+        <div class="footer-info">
+        <p>&copy; 2026 Sonido Vivo. Todos los derechos reservados.</p>
+        <p class="estado-sistema">En línea</p>
         </div>
-        <footer class="vista-admin-footer">
-            <div class="footer-info">
-                <p>&copy; 2026 Sonido Vivo. Todos los derechos reservados.</p>
-                <p class="estado-sistema">En línea</p>
-            </div>
-            <div class="footer-ayuda">
-                <a href="#">Ayuda</a>
-                <p>Versión 1.0.0 (Prototipo Parcial01)</p>
-            </div>
-        </footer>
-    </body>
+        <div class="footer-ayuda">
+        <a href="#">Ayuda</a>
+        <p>Versión 1.0.0 (Prototipo Parcial01)</p>
+        </div>
+    </footer>
+</body>
 </html>
