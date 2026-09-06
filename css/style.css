@@ -339,7 +339,7 @@ h3 {
 
 .vista-admin-container header {
     width: 20vw;
-    border-right: 1px solid #6F5872;
+    border-right: 2px solid #6F5872;
     background-color: #4D3D4F;
     color: #e4e4e4;
     display: flex;
@@ -349,9 +349,10 @@ h3 {
 
 .vista-admin-container h2 {
     font-size: 1.7rem;
-    margin-top: 10px;
+    margin-top: 1%;
     color: #ECE8EB;
     text-align: left;
+    max-height: 1.7rem;
 }
 
 .vista-admin-filtros {
