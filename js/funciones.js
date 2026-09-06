@@ -463,7 +463,7 @@ function cargarListadoUsuarios() {
         fila.innerHTML = `
             <td>${item.fecha}</td>
             <td>${item.orden}</td>
-            <td>${item.nombre}</td>
+            <td><a href="admin-mostrar-usuario.html">${item.nombre}</a></td>
             <td>${item.estado}</td>
             <td>${item.total}</td>
         `;
@@ -478,7 +478,7 @@ const usuarioDetalle =
 {
     nombre: 'Benjamín Vasuqez', run: '204501807', correo: 'benjam@duoc.cl',
     telefono: '+56948999989', region: 'Metropolitana', comuna: 'Santiago',
-    tipoUsuario: 'Administrador'
+    tipoUsuario: 'Cliente'
 };
 function cargarDetalleUsuario() {
     const nombreDetalle = document.querySelector('#nombre-detalle');
