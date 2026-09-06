@@ -77,7 +77,7 @@ let carrito = JSON.parse(localStorage.getItem('carritoSonidoVivo')) || [];
 function renderizarCatalogo() {
     const contenedor = document.getElementById('contenedor-productos');
     // Verifica si estamos en la página del catálogo antes de ejecutar
-    if (!contenedor) return; 
+    if (!contenedor) return;
 
     contenedor.innerHTML = ''; // Limpia el contenedor
 
@@ -111,9 +111,9 @@ function renderizarCatalogo() {
 }
 
 // 4. Función para agregar productos al carrito
-window.agregarAlCarrito = function(codigo) {
+window.agregarAlCarrito = function (codigo) {
     const productoEncontrado = catalogoSonidoVivo.find(p => p.codigo === codigo);
-    
+
     if (productoEncontrado) {
         // Verificar si ya existe en el carrito para sumar cantidad
         const itemEnCarrito = carrito.find(item => item.codigo === codigo);
@@ -122,10 +122,10 @@ window.agregarAlCarrito = function(codigo) {
         } else {
             carrito.push({ ...productoEncontrado, cantidad: 1 });
         }
-        
+
         // Guardar en LocalStorage
         localStorage.setItem('carritoSonidoVivo', JSON.stringify(carrito));
-        
+
         // Alerta visual de confirmación para el usuario
         mostrarMensajeToast(`${productoEncontrado.nombre} añadido al carrito.`);
         actualizarContadorCarrito();
@@ -138,7 +138,7 @@ function mostrarMensajeToast(mensaje) {
     const toast = document.createElement('div');
     toast.classList.add('toast-mensaje');
     toast.textContent = mensaje;
-    
+
     // Añadirlo al body
     document.body.appendChild(toast);
 
@@ -207,7 +207,7 @@ if (formularioContacto) {
         // --- validacion del correo ---
         // Expresión regular que obliga a usar solo los dominios permitidos
         const patronCorreoPermitido = /^[^\s@]+@(duoc\.cl|profesor\.duoc\.cl|gmail\.com)$/;
-        
+
         if (correo.value.trim() === '') {
             correo.classList.add('campo-error');
             errorCorreo.textContent = 'El correo es obligatorio.';
@@ -473,6 +473,31 @@ function cargarListadoUsuarios() {
 
 document.addEventListener('DOMContentLoaded', cargarListadoUsuarios);
 
+//logica para el admin-mostar-usuario
+const usuarioDetalle =
+{
+    nombre: 'Benjamín Vasuqez', run: '204501807', correo: 'benjam@duoc.cl',
+    telefono: '+56948999989', region: 'Metropolitana', comuna: 'Santiago',
+    tipoUsuario: 'Administrador'
+};
+function cargarDetalleUsuario() {
+    const nombreDetalle = document.querySelector('#nombre-detalle');
+    if (!nombreDetalle) return;
+
+    document.querySelector('#nombre-detalle').textContent = usuarioDetalle.nombre;
+    document.querySelector('#run-detalle').textContent = usuarioDetalle.run;
+    document.querySelector('#correo-detalle').textContent = usuarioDetalle.correo;
+    document.querySelector('#telefono-detalle').textContent = usuarioDetalle.telefono;
+    document.querySelector('#region-detalle').textContent = usuarioDetalle.region;
+    document.querySelector('#comuna-detalle').textContent = usuarioDetalle.comuna;
+    document.querySelector('#tipo-detalle').textContent = usuarioDetalle.tipoUsuario;
+}
+
+document.addEventListener('DOMContentLoaded', cargarDetalleUsuario);
+
+
+
+document.addEventListener('DOMContentLoaded', cargarListadoUsuarios);
 //Logica para el admin-crear-usuario.html
 const formularioUsuario = document.querySelector('#registrar-usuario');
 if (formularioUsuario) {

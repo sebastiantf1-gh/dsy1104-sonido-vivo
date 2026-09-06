@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mostrar usuario</title>
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="js/funciones.js" defer></script>
+
+</head>
+
+<body class="vista-admin-body">
+    <div class="vista-admin-container">
+        <header>
+            <img src="img/logo.jpg" alt="logo de sonido vivo" class="logo-principal" />
+
+            <h1>
+                Sonido <br />
+                Vivo
+            </h1>
+
+            <nav>
+                <ul>
+                    <li><a href="#">Dashboards</a></li>
+                    <!-- hay que agregar el link a la pagina de dashboard y a las otras -->
+                    <li><a href="listado-usuario.html">Gestión de usuarios</a></li>
+                    <li><a href="admin-inventario.html">Gestión de inventario</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <h2>Detalle</h2>
+
+
+            <div class="caja-formulario">
+                <section class="admin-caracteristicas-prod">
+                    <p><strong>Nombre Completo:</strong>
+                        <span id="nombre-detalle"></span>
+                    </p>
+                    <p><strong>RUT:</strong>
+                        <span id="run-detalle"></span>
+                    </p>
+                    <p><strong>Correo:</strong>
+                        <span id="correo-detalle"></span>
+                    </p>
+                    <p><strong>Telefono:</strong>
+                        <span id="telefono-detalle"></span>
+                    </p>
+                    <p><strong>Region:</strong>
+                        <span id="region-detalle"></span>
+                    </p>
+                    <p><strong>Comuna:</strong>
+                        <span id="comuna-detalle"></span>
+                    </p>
+                    <p><strong>Tipo de usuario:</strong>
+                        <span id="tipo-detalle"></span>
+                    </p>
+                </section>
+
+                <div class="admin-contenedor-btn-agregar">
+                    <a href="#" class="admin-agregar-btn">editar</a>
+                </div>
+            </div>
+        </main>
+    </div>
+    <footer class="vista-admin-footer">
+        <div class="footer-info">
+            <p>&copy; Sonido Vivo. Todos los derechos reservados.</p>
+            <p class="estado-sistema">En línea</p>
+        </div>
+    </footer>
+</body>
+
+</html>
