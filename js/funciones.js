@@ -740,3 +740,103 @@ if (formularioEditarUsuario) {
         }
     })
 }
+// Logica para Crear Producto
+const formularioProducto = document.querySelector('#form-producto');
+
+if (formularioProducto) {
+    formularioProducto.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        const nombre = document.querySelector('#nombre');
+        const descripcion = document.querySelector('#descripcion');
+        const precio = document.querySelector('#precio');
+        const stock = document.querySelector('#stock');
+        const stockCritico = document.querySelector('#stock-critico');
+        const categoria = document.querySelector('#categoria');
+        const imagen = document.querySelector('#imagen');
+
+        let formularioProductoValido = true;
+
+        // Validar Nombre
+        if (nombre.value.trim() === '' || nombre.value.length > 100) {
+            nombre.classList.add('campo-error');
+            document.querySelector('#error-nombre').textContent = "El nombre es obligatorio y debe tener menos de 100 caracteres.";
+            formularioProductoValido = false;
+        } else {
+            nombre.classList.remove('campo-error');
+            document.querySelector('#error-nombre').textContent = '';
+        }
+
+        // Validar Descripción
+        if (descripcion.value.trim() !== '' && descripcion.value.length > 250) {
+            descripcion.classList.add('campo-error');
+            document.querySelector('#error-descripcion').textContent = "La descripción no puede superar los 250 caracteres.";
+            formularioProductoValido = false;
+        } else {
+            descripcion.classList.remove('campo-error');
+            document.querySelector('#error-descripcion').textContent = '';
+        }
+
+        // Validar Precio
+        if (precio.value.trim() === '' || Number(precio.value) <= 0) {
+            precio.classList.add('campo-error');
+            document.querySelector('#error-precio').textContent = "Ingrese un precio mayor a 0.";
+            formularioProductoValido = false;
+        } else {
+            precio.classList.remove('campo-error');
+            document.querySelector('#error-precio').textContent = '';
+        }
+
+        // Validar Stock
+        if (stock.value.trim() === '' || Number(stock.value) < 0) {
+            stock.classList.add('campo-error');
+            document.querySelector('#error-stock').textContent = "Ingrese un stock válido (0 o mayor).";
+            formularioProductoValido = false;
+        } else {
+            stock.classList.remove('campo-error');
+            document.querySelector('#error-stock').textContent = '';
+        }
+
+        // Validar Stock Crítico
+        if (stockCritico.value.trim() !== '' && Number(stockCritico.value) < 0) {
+            stockCritico.classList.add('campo-error');
+            document.querySelector('#error-stock-critico').textContent = "El stock crítico no puede ser negativo.";
+            formularioProductoValido = false;
+        } else {
+            stockCritico.classList.remove('campo-error');
+            document.querySelector('#error-stock-critico').textContent = '';
+        }
+
+        // Validar Categoría
+        if (categoria.value.trim() === '') {
+            categoria.classList.add('campo-error');
+            document.querySelector('#error-categoria').textContent = "Debe seleccionar una categoría.";
+            formularioProductoValido = false;
+        } else {
+            categoria.classList.remove('campo-error');
+            document.querySelector('#error-categoria').textContent = '';
+        }
+
+        // Validar Imagen
+        if (imagen.files.length > 0) {
+            const archivo = imagen.files[0];
+            const extensionesValidas = ['image/jpeg', 'image/png', 'image/webp'];
+            if (!extensionesValidas.includes(archivo.type)) {
+                imagen.classList.add('campo-error');
+                document.querySelector('#error-imagen').textContent = "Formato de imagen no válido (JPG, PNG o WEBP).";
+                formularioProductoValido = false;
+            } else {
+                imagen.classList.remove('campo-error');
+                document.querySelector('#error-imagen').textContent = '';
+            }
+        } else {
+            imagen.classList.remove('campo-error');
+            document.querySelector('#error-imagen').textContent = '';
+        }
+
+        // Confirmación
+        if (formularioProductoValido) {
+            document.querySelector('#mensaje-confirmacion-producto').textContent = 'Producto registrado correctamente.';
+        }
+    });
+}
