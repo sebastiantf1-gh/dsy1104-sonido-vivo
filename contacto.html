@@ -3,42 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contacto</title>
+    <title>Contacto - Sonido Vivo</title>
     <link rel="stylesheet" href="css/style.css">
     <script src="js/funciones.js" defer></script>
-
 </head>
 <body>
+
+    <header>
+        <div class="logo">
+            <img src="img/logo.jpg" alt="Logo de Sonido Vivo" id="logo-catalogo">
+            <h2>Sonido Vivo</h2>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="catalogo.html">Productos</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="blogs.html">Blogs</a></li>
+                <li><a href="contacto.html" class="activo">Contacto</a></li>
+            </ul>
+        </nav>
+        <div class="carrito-nav">
+            <a href="carrito.html">🛒 Carrito (<span id="contador-carrito">0</span>)</a>
+        </div>
+    </header>
+
     <main>
-        <section id = "contacto">
-            <h1>Contacto</h1>
-            <form id="form-contacto">
-                <label for="nombre">Nombre Completo:</label>
-                <input type="text" id="nombre" required>
+        <section id="contacto" class="seccion-formulario">
+            <div class="encabezado-contacto">
+                <img src="img/logo.jpg" alt="Logo Empresa" width="80px">
+                <h2>Sonido Vivo</h2>
+            </div>
 
-                <label for="email">Correo Electrónico:</label>
-                <input type="email" id="correo" placeholder="email@ejemplo.cl" required>
+            <form id="form-contacto" class="formulario-estilo" novalidate>
+                <div class="encabezado-form">
+                    <h3>FORMULARIO DE CONTACTO</h3>
+                </div>
 
-                <label for="telefono">Telefono:</label>
-                <input type="tel" id="telefono" placeholder="912345678" pattern="[0-9]{9}" 
-                title="Debe contener 9 dígitos numéricos" required>
+                <div class="grupo-input">
+                    <label for="nombre">Nombre Completo:</label>
+                    <!-- maxlength="100" añadido como primera capa de defensa -->
+                    <input type="text" id="nombre" name="nombre" maxlength="100" required>
+                    <span id="error-nombre" class="error-texto"></span>
+                </div>
 
-                <label for="motivo">Motivo de la Consulta:</label>
-                <select id="motivo" required>
-                    <option value="">Seleccione una opción</option>
-                    <option>Consultas generales</option>
-                    <option>Reclamo</option>
-                    <option>Otro</option>
-                </select>
+                <div class="grupo-input">
+                    <label for="correo">Correo Electrónico:</label>
+                    <input type="email" id="correo" name="correo" maxlength="100" required>
+                    <span id="error-correo" class="error-texto"></span>
+                </div>
 
-                <label for="mensaje">Mensaje:</label>
-                <textarea id="mensaje" required placeholder="Escriba su consulta aquí."></textarea>
+                <div class="grupo-input">
+                    <label for="comentario">Mensaje / Comentario:</label>
+                    <!-- maxlength="500" -->
+                    <textarea id="comentario" name="comentario" rows="5" maxlength="500" required></textarea>
+                    <span id="error-comentario" class="error-texto"></span>
+                </div>
 
-                <button type="submit">Enviar</button>
+                <button type="submit" class="btn-enviar">Enviar Mensaje</button>
                 <p id="mensaje-confirmado"></p>
             </form>
         </section>
     </main>
     
+    <footer>
+        <p>&copy; 2026 Sonido Vivo - Tienda de Instrumentos Musicales. Todos los derechos reservados.</p>
+    </footer>
 </body>
 </html>

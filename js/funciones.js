@@ -161,34 +161,83 @@ function actualizarContadorCarrito() {
 // 6. Cargar el catálogo cuando el DOM esté listo
 document.addEventListener('DOMContentLoaded', renderizarCatalogo);
 
-//validaciones Contacto
-const formulario = document.querySelector('#form-contacto');
-const patronCorreo = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-if (formulario) {
-    formulario.addEventListener('submit', function (e) {
+
+/* ===============================================*/
+/* ====== Logica de Contacto: Validaciones ======*/
+const formularioContacto = document.querySelector('#form-contacto');
+
+if (formularioContacto) {
+    formularioContacto.addEventListener('submit', function (e) {
+        // Prevenir el envío automático del formulario
         e.preventDefault();
 
-        const camposObligatorios = formulario.querySelectorAll('[required]');
+        // 1. Capturar los campos del formulario
+        const nombre = document.querySelector('#nombre');
+        const correo = document.querySelector('#correo');
+        const comentario = document.querySelector('#comentario');
+
+        // 2. Capturar las cajas de texto para los errores
+        const errorNombre = document.querySelector('#error-nombre');
+        const errorCorreo = document.querySelector('#error-correo');
+        const errorComentario = document.querySelector('#error-comentario');
+        const mensajeConfirmado = document.querySelector('#mensaje-confirmado');
+
+        // 3. Variable de control
         let formularioValido = true;
 
-        camposObligatorios.forEach(function (campo) {
-            if (campo.value.trim() === '') {
-                campo.classList.add('campo-error');
-                formularioValido = false;
-            } else {
-                campo.classList.remove('campo-error');
-            }
-        });
+        // Limpiar mensajes y clases de error antes de cada validación
+        [nombre, correo, comentario].forEach(campo => campo.classList.remove('campo-error'));
+        errorNombre.textContent = '';
+        errorCorreo.textContent = '';
+        errorComentario.textContent = '';
+        mensajeConfirmado.textContent = '';
 
-        const correo = document.querySelector('#correo');
-        if (!patronCorreo.test(correo.value.trim())) {
-            correo.classList.add('campo-error');
+        // --- validacion del nombre ---
+        if (nombre.value.trim() === '') {
+            nombre.classList.add('campo-error');
+            errorNombre.textContent = 'El nombre es obligatorio.';
+            formularioValido = false;
+        } else if (nombre.value.length > 100) {
+            nombre.classList.add('campo-error');
+            errorNombre.textContent = 'El nombre no puede superar los 100 caracteres.';
             formularioValido = false;
         }
 
-        const mensajeConfirmado = document.querySelector('#mensaje-confirmado');
-        mensajeConfirmado.textContent = formularioValido ? 'Consulta recibida.' : '';
+        // --- validacion del correo ---
+        // Expresión regular que obliga a usar solo los dominios permitidos
+        const patronCorreoPermitido = /^[^\s@]+@(duoc\.cl|profesor\.duoc\.cl|gmail\.com)$/;
+        
+        if (correo.value.trim() === '') {
+            correo.classList.add('campo-error');
+            errorCorreo.textContent = 'El correo es obligatorio.';
+            formularioValido = false;
+        } else if (correo.value.length > 100) {
+            correo.classList.add('campo-error');
+            errorCorreo.textContent = 'El correo no puede superar los 100 caracteres.';
+            formularioValido = false;
+        } else if (!patronCorreoPermitido.test(correo.value.trim())) {
+            correo.classList.add('campo-error');
+            errorCorreo.textContent = 'Solo se permiten correos @duoc.cl, @profesor.duoc.cl o @gmail.com.';
+            formularioValido = false;
+        }
+
+        // --- validacion del comentario ---
+        if (comentario.value.trim() === '') {
+            comentario.classList.add('campo-error');
+            errorComentario.textContent = 'Debe ingresar un mensaje o comentario.';
+            formularioValido = false;
+        } else if (comentario.value.length > 500) {
+            comentario.classList.add('campo-error');
+            errorComentario.textContent = 'El comentario no puede superar los 500 caracteres.';
+            formularioValido = false;
+        }
+
+        // --- resultado final ---
+        if (formularioValido) {
+            mensajeConfirmado.textContent = 'Consulta enviada con éxito.';
+            formularioContacto.reset(); // Limpia el formulario después de un envío exitoso
+        }
     });
 }
 
