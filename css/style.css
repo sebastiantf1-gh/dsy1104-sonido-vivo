@@ -466,6 +466,34 @@ h3 {
     padding: 20px;
     border-radius: 4px;
 }
+.vista-admin-container h3{
+    font-size: 1.4rem;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    color: #ECE8EB;
+}
+.form-admin{
+    color: #ECE8EB;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: auto;
+    height: auto;
+    margin:auto;
+    gap: 4px;
+}
+.caja-formulario{
+    background-color: #4D3D4F;
+    display: flex;
+    justify-content: center;
+    height: auto;
+    width: 75%;
+    margin-top: 10%;
+    margin-left: -5%;
+    border-radius: 15px;
+    border: #6F5872 solid 2px;
+}
 
 td.stock-critico {
     color: #b90000;
