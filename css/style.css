@@ -1273,17 +1273,24 @@ header nav ul li a.activo {
     font-size: 75%;
     padding: 10px;
     border-radius: 6px;
-    border-color: #392D3B;
+    border: #755c78 2px;
     background-color: #D8ABDE;
     border-style: solid;
     text-decoration: none;
     text-transform: uppercase;
     font-weight: bold;
+    text-align: center;
+}
+
+.admin-agregar-btn:visited {
+    color: #392D3B;
 }
 
 .admin-contenedor-btn-agregar {
     display: flex;
     justify-content: flex-end;
+    padding: 10px;
+    height: 60px;
 }
 
 .admin-btn:hover {
@@ -1361,6 +1368,35 @@ header nav ul li a.activo {
     margin-left: -5%;
     border-radius: 15px;
     border: #6F5872 solid 2px;
+}
+/* === Admin-mostrar-producto === */
+.admin-caracteristicas-prod{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.admin-caracteristicas-prod h4{
+    
+    font-size: 1.0rem;
+    display: flex;
+    justify-content: left;
+    padding: 10px;
+    color: #ECE8EB;
+}
+.admin-caracteristicas-prod p{
+    background-color: #614d63;
+    padding: 5px;
+    border-radius: 5px;
+    border: #6F5872 solid 2px;
+    font-size: 0.9rem;
+    display: flex;
+    justify-content: left;
+    color: #c7b6c3;
+}
+.admin-image-prod{
+    width: 10%;
+    height: 10%;
 }
 
 td.stock-critico {
