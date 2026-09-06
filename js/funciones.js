@@ -1,3 +1,4 @@
+/* ================================*/
 /* ====== Logica de Catálogo ======*/
 // 1. Arreglo de Productos
 const catalogoSonidoVivo = [
@@ -91,8 +92,10 @@ function renderizarCatalogo() {
         const tarjeta = document.createElement('article');
         tarjeta.classList.add('producto-catalogo');
         tarjeta.innerHTML = `
-            <img src="${producto.imagen}" alt="${producto.nombre}">
-            <h2>${producto.nombre}</h2>
+            <a  href="detalle-producto.html" class="enlace-detalle">
+                <img src="${producto.imagen}" alt="${producto.nombre}">
+                <h2>${producto.nombre}</h2>
+            </a>
             <p class="precio">${precioCLP}</p>
             <p class="marca"><strong>Marca:</strong> ${producto.marca}</p>
             <p class="modelo"><strong>Modelo:</strong> ${producto.modelo}</p>

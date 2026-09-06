@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle de Producto - Sonido Vivo</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/funciones.js" defer></script>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="img/logo.jpg" alt="Logo de Sonido Vivo" id="logo-catalogo">
+            <h2>Sonido Vivo</h2>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="catalogo.html" class="activo">Productos</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="blogs.html">Blogs</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+        <div class="carrito-nav">
+            <a href="carrito.html">🛒 Carrito (<span id="contador-carrito">0</span>)</a>
+        </div>
+    </header>
+    
+    <main class="main-detalle">
+        
+        <!-- Miga de pan (Breadcrumbs) -->
+        <nav class="miga-pan" aria-label="Navegación de ruta">
+            <a href="index.html">Home</a> &gt; 
+            <a href="catalogo.html">Teclados y Pianos</a> &gt; 
+            <span>Teclado Digital 61 teclas</span>
+        </nav>
+
+        <section class="contenedor-detalle-producto">
+            
+            <!-- Izquierda: Galería de imágenes (Imagen principal + 3 cajitas) -->
+            <article class="galeria-producto">
+                <div class="imagen-principal">
+                    <img src="img/yamaha-psre373.png" alt="Teclado Digital 61 teclas">
+                </div>
+                <div class="miniaturas">
+                    <!-- Cajas para las vistas alternativas -->
+                    <img src="" alt="Vista alternativa 1">
+                    <img src="" alt="Vista  alternativa 2">
+                </div>
+            </article>
+
+            <!-- Derecha: Información y compra -->
+            <article class="info-producto-detalle">
+                <div class="encabezado-detalle">
+                    <h1 class="nombre-producto">Teclado Digital 61 teclas</h1>
+                    <span class="precio-detalle">$249.990</span>
+                </div>
+                
+                <p class="descripcion-larga">
+                    El PSR-E373 es un teclado portátil modelo estándar de 61 teclas para 
+                    los tecladistas principiantes, o para tecladistas que quieran tocar 
+                    en vivo. Está cargado con funciones versátiles, un mecanismo de teclado 
+                    expresivo sensible al tacto y muchas funciones convenientes para que hasta 
+                    los principiantes disfruten de tocarlo de inmediato.
+                </p>
+                
+                <div class="controles-compra">
+                    <label for="cantidad-producto">Cantidad:</label>
+                    <input type="number" id="cantidad-producto" name="cantidad" min="1" max="5" value="1">
+                    
+                    <!-- Llamamos a la función JS pasando el código correcto del producto -->
+                    <button class="btn-agregar-detalle" onclick="agregarAlCarrito('TC001')">
+                        Añadir al carrito
+                    </button>
+                </div>
+            </article>
+        </section>
+
+        <!-- 3. Sección de Productos Relacionados -->
+        <section class="productos-relacionados">
+            <h3>Productos Relacionados</h3>
+            <div class="grilla-relacionados">
+                <div class="producto-catalogo mini-tarjeta">
+                    <img src="img/squier-affiinity-strat.png" alt="Squier Strat">
+                </div>
+                <div class="producto-catalogo mini-tarjeta">
+                    <img src="img/yamaha-f310.png" alt="Yamaha F310">
+                </div>
+                <div class="producto-catalogo mini-tarjeta">
+                    <img src="img/fender-frontman-15g.png" alt="Fender Amp">
+                </div>
+                <div class="producto-catalogo mini-tarjeta">
+                    <img src="img/squier-affiinity-pj.png" alt="Bajo Squier">
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Sonido Vivo - Tienda de Instrumentos Musicales. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

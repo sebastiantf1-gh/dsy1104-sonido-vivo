@@ -88,7 +88,10 @@ h3 {
     transform: translateY(-6px);
 }
 
-/* === Catalogo === */
+
+
+/* ========================================== */
+/* ============== CATALOGO ================= */
 header {
     display: flex;
     justify-content: space-between;
@@ -275,6 +278,227 @@ header nav ul li a.activo {
         grid-template-columns: repeat(4, 1fr); /* 4 columnas (Como en el mockup) */
     }
 }
+
+
+
+/* ========================================== */
+/* ============== DETALLE PRODUCTO ================= */
+
+/* Contenedor principal de la vista */
+.main-detalle {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+/* Estilo para el enlace al detalle del producto */
+.enlace-detalle {
+    text-decoration: none; /* Quita el subrayado */
+    color: inherit; /* Mantiene el color original del texto */
+    cursor: pointer;
+    display: block; /* Le dice al enlace que actúe como una caja contenedora */
+    width: 100%;
+
+}
+
+.enlace-detalle:hover h2 {
+    color: rgb(142, 96, 125); /* cambia el color del título al pasar el mouse para indicar que es clickeable */
+}
+
+/* 1. Miga de pan (Breadcrumbs) */
+.miga-pan {
+    margin-bottom: 20px;
+    font-size: 0.95rem;
+    color: #4D3D4F;
+}
+
+.miga-pan a {
+    color: rgb(142, 96, 125);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.miga-pan a:hover {
+    text-decoration: underline;
+}
+
+/* 2. Sección Principal: Grilla Layout */
+.contenedor-detalle-producto {
+    display: grid;
+    /* En móviles, es 1 sola columna */
+    grid-template-columns: 1fr;
+    gap: 40px;
+    background-color: rgb(200, 184, 224);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* --- Lado Izquierdo: Galería --- */
+.galeria-producto {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.imagen-principal {
+    background-color: white;
+    border: 2px solid #b08bb5;
+    border-radius: 8px;
+    padding: 10px;
+}
+
+.imagen-principal img {
+    width: 100%;
+    height: 350px;
+    object-fit: contain;
+}
+
+.miniaturas {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.miniaturas img {
+    width: 100%;
+    height: 100px;
+    object-fit: contain;
+    background-color: white;
+    border: 2px solid #b08bb5;
+    border-radius: 4px;
+    padding: 5px;
+    cursor: pointer;
+    transition: border-color 0.3s;
+}
+
+.miniaturas img:hover {
+    border-color: rgb(104, 68, 91);
+}
+
+/* --- Lado Derecho: Info y Compra --- */
+.info-producto-detalle {
+    display: flex;
+    flex-direction: column;
+}
+
+.encabezado-detalle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    border-bottom: 2px solid #b08bb5;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+}
+
+.nombre-producto {
+    font-size: 2.2rem;
+    color: #200347;
+    margin: 0;
+}
+
+.precio-detalle {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #094d17;
+}
+
+.descripcion-larga {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+/* Controles de Compra (Cantidad + Botón) */
+.controles-compra {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: auto;
+}
+
+.controles-compra label {
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: #200347;
+}
+
+.controles-compra input {
+    width: 70px;
+    padding: 10px;
+    font-size: 1.1rem;
+    border: 2px solid #b08bb5;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.btn-agregar-detalle {
+    background-color: rgb(142, 96, 125);
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    flex-grow: 1;
+}
+
+.btn-agregar-detalle:hover {
+    background-color: rgb(104, 68, 91);
+}
+
+/* 3. Productos Relacionados */
+.productos-relacionados {
+    margin-top: 60px;
+    padding-top: 30px;
+    border-top: 2px solid #b08bb5;
+}
+
+.productos-relacionados h3 {
+    text-align: center;
+    color: #200347;
+    margin-bottom: 30px;
+    font-size: 1.8rem;
+}
+
+.grilla-relacionados {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+/* Ajustes para las tarjetas pequeñas reutilizadas de catálogo */
+.mini-tarjeta img {
+    height: 150px;
+}
+
+/* ======= Media Queries (Responsividad Detalle Producto) ====== */
+
+/* Tabletas (≥ 768 px) */
+@media (min-width: 768px) {
+    /* La sección principal pasa a tener 2 columnas (50% y 50%) */
+    .contenedor-detalle-producto {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    /* Productos relacionados pasan a 2 columnas */
+    .grilla-relacionados {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Computadores de Escritorio (≥ 1280 px) */
+@media (min-width: 1280px) {
+    /* Productos relacionados a 4 columnas como en el mockup */
+    .grilla-relacionados {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
 
 /* === Nosotros === */
 #main-nosotros {
