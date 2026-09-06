@@ -965,6 +965,14 @@ header nav ul li a.activo {
     /* Mantiene el espacio fijo para que la pantalla no salte cuando aparezca el error */
 }
 
+.error-producto {
+    color: red;
+    font-size: 14px;
+    display: block;
+    min-height: auto;
+    margin-top: 2px;
+}
+
 /* Botón de Enviar */
 .btn-enviar {
     background-color: #4D3D4F;
