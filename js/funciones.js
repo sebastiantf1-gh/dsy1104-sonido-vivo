@@ -1,5 +1,193 @@
+/* ====== Logica de Catálogo ======*/
+// 1. Arreglo de Productos
+const catalogoSonidoVivo = [
+    {
+        codigo: 'GA001',
+        categoria: 'Guitarras Acústicas',
+        nombre: 'Guitarra Acústica Folk',
+        marca: 'Yamaha',
+        modelo: 'F310',
+        stock: 8,
+        precio: 129990,
+        descripcion: 'Tapa de abeto, aros y fondo de meranti. Ideal para iniciantes.',
+        imagen: 'img/yamaha-f310.png'
+    },
+    {
+        codigo: 'GE001',
+        categoria: 'Guitarras Eléctricas',
+        nombre: 'Guitarra Eléctrica Stratocaster',
+        marca: 'Squier',
+        modelo: 'Affinity Strat',
+        stock: 5,
+        precio: 249990,
+        descripcion: 'Cuerpo de álamo, mástil de arce, pastillas SSS.',
+        imagen: 'img/squier-affiinity-strat.png'
+    },
+    {
+        codigo: 'BA001',
+        categoria: 'Bajos Eléctricos',
+        nombre: 'Bajo Eléctrico 4 Cuerdas',
+        marca: 'Squier',
+        modelo: 'Affinity PJ',
+        stock: 5,
+        precio: 299990,
+        descripcion: 'Pickup PJ, cuerpo álamo, mástil arce.',
+        imagen: 'img/squier-affiinity-pj.png'
+    },
+    {
+        codigo: 'BT001',
+        categoria: 'Baterías',
+        nombre: 'Batería Acústica 5 piezas',
+        marca: 'Pearl',
+        modelo: 'Roadshow',
+        stock: 2,
+        precio: 599990,
+        descripcion: 'Incluye stands, platillos y pedal de bombo.',
+        imagen: 'img/pearl-roadshow.png'
+    },
+    {
+        codigo: 'TC001',
+        categoria: 'Teclados y Pianos',
+        nombre: 'Teclado Digital 61 teclas',
+        marca: 'Yamaha',
+        modelo: 'PSR-E373',
+        stock: 4,
+        precio: 249990,
+        descripcion: '61 teclas sensibles al tacto, 622 voces',
+        imagen: 'img/yamaha-psre373.png'
+    },
+    {
+        codigo: 'AM001',
+        categoria: 'Amplificadores',
+        nombre: 'Amplificador Guitarra 15W',
+        marca: 'Fender',
+        modelo: 'Frontman 15G',
+        stock: 5,
+        precio: 99990,
+        descripcion: '15W, distorsión incorporada, entrada auxiliar.',
+        imagen: 'img/fender-frontman-15g.png'
+    }
+];
+
+// 2. Inicialización del Carrito en LocalStorage
+let carrito = JSON.parse(localStorage.getItem('carritoSonidoVivo')) || [];
+
+// 3. Función para renderizar el catálogo en el HTML
+function renderizarCatalogo() {
+    const contenedor = document.getElementById('contenedor-productos');
+    // Verifica si estamos en la página del catálogo antes de ejecutar
+    if (!contenedor) return; 
+
+    contenedor.innerHTML = ''; // Limpia el contenedor
+
+    catalogoSonidoVivo.forEach(producto => {
+        // Formateo del precio a CLP
+        const precioCLP = new Intl.NumberFormat('es-CL', {
+            style: 'currency',
+            currency: 'CLP'
+        }).format(producto.precio);
+
+        // Creación del HTML de la tarjeta
+        const tarjeta = document.createElement('article');
+        tarjeta.classList.add('producto-catalogo');
+        tarjeta.innerHTML = `
+            <img src="${producto.imagen}" alt="${producto.nombre}">
+            <h2>${producto.nombre}</h2>
+            <p class="precio">${precioCLP}</p>
+            <p class="marca"><strong>Marca:</strong> ${producto.marca}</p>
+            <p class="modelo"><strong>Modelo:</strong> ${producto.modelo}</p>
+            <p class="descripcion">${producto.descripcion}</p>
+            <p class="stock">Stock disponible: ${producto.stock}</p>
+            <button class="btn-agregar" onclick="agregarAlCarrito('${producto.codigo}')">
+                Añadir al Carrito
+            </button>
+        `;
+        contenedor.appendChild(tarjeta);
+    });
+    actualizarContadorCarrito();
+}
+
+// 4. Función para agregar productos al carrito
+window.agregarAlCarrito = function(codigo) {
+    const productoEncontrado = catalogoSonidoVivo.find(p => p.codigo === codigo);
+    
+    if (productoEncontrado) {
+        // Verificar si ya existe en el carrito para sumar cantidad
+        const itemEnCarrito = carrito.find(item => item.codigo === codigo);
+        if (itemEnCarrito) {
+            itemEnCarrito.cantidad++;
+        } else {
+            carrito.push({ ...productoEncontrado, cantidad: 1 });
+        }
+        
+        // Guardar en LocalStorage
+        localStorage.setItem('carritoSonidoVivo', JSON.stringify(carrito));
+        
+        // Alerta visual de confirmación para el usuario
+        mostrarMensajeToast(`${productoEncontrado.nombre} añadido al carrito.`);
+        actualizarContadorCarrito();
+    }
+};
+
+// 4.1 Función para crear y mostrar la notificación en pantalla
+function mostrarMensajeToast(mensaje) {
+    // Crear el div del mensaje
+    const toast = document.createElement('div');
+    toast.classList.add('toast-mensaje');
+    toast.textContent = mensaje;
+    
+    // Añadirlo al body
+    document.body.appendChild(toast);
+
+    // Eliminarlo del HTML después de 3 segundos para no acumular basura en el DOM
+    setTimeout(() => {
+        toast.remove();
+    }, 3000);
+}
+
+// 5. Función para actualizar el contador del carrito en el Header
+function actualizarContadorCarrito() {
+    const contador = document.getElementById('contador-carrito');
+    if (contador) {
+        // Suma la cantidad total de items, no solo los tipos de productos
+        const totalItems = carrito.reduce((acc, item) => acc + item.cantidad, 0);
+        contador.textContent = totalItems;
+    }
+}
+
+// 6. Cargar el catálogo cuando el DOM esté listo
+document.addEventListener('DOMContentLoaded', renderizarCatalogo);
+
+//validaciones Contacto
 const formulario = document.querySelector('#form-contacto');
 const patronCorreo = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+if (formulario) {
+    formulario.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        const camposObligatorios = formulario.querySelectorAll('[required]');
+        let formularioValido = true;
+
+        camposObligatorios.forEach(function (campo) {
+            if (campo.value.trim() === '') {
+                campo.classList.add('campo-error');
+                formularioValido = false;
+            } else {
+                campo.classList.remove('campo-error');
+            }
+        });
+
+        const correo = document.querySelector('#correo');
+        if (!patronCorreo.test(correo.value.trim())) {
+            correo.classList.add('campo-error');
+            formularioValido = false;
+        }
+
+        const mensajeConfirmado = document.querySelector('#mensaje-confirmado');
+        mensajeConfirmado.textContent = formularioValido ? 'Consulta recibida.' : '';
+    });
+}
 
 //Arreglo de objetos(inventario)
 const productos = [
@@ -47,33 +235,6 @@ const productos = [
     }
 ]
 
-
-if (formulario) {
-    formulario.addEventListener('submit', function (e) {
-        e.preventDefault();
-
-        const camposObligatorios = formulario.querySelectorAll('[required]');
-        let formularioValido = true;
-
-        camposObligatorios.forEach(function (campo) {
-            if (campo.value.trim() === '') {
-                campo.classList.add('campo-error');
-                formularioValido = false;
-            } else {
-                campo.classList.remove('campo-error');
-            }
-        });
-
-        const correo = document.querySelector('#correo');
-        if (!patronCorreo.test(correo.value.trim())) {
-            correo.classList.add('campo-error');
-            formularioValido = false;
-        }
-
-        const mensajeConfirmado = document.querySelector('#mensaje-confirmado');
-        mensajeConfirmado.textContent = formularioValido ? 'Consulta recibida.' : '';
-    });
-}
 //Logica para el login.HTML 
 
 const formularioLogin = document.querySelector('#login');
