@@ -1369,22 +1369,25 @@ header nav ul li a.activo {
     border-radius: 15px;
     border: #6F5872 solid 2px;
 }
+
 /* === Admin-mostrar-producto === */
-.admin-caracteristicas-prod{
+.admin-caracteristicas-prod {
     padding: 20px;
     display: flex;
     flex-direction: column;
     gap: 5px;
 }
-.admin-caracteristicas-prod h4{
-    
+
+.admin-caracteristicas-prod h4 {
+
     font-size: 1.0rem;
     display: flex;
     justify-content: left;
     padding: 10px;
     color: #ECE8EB;
 }
-.admin-caracteristicas-prod p{
+
+.admin-caracteristicas-prod p {
     background-color: #614d63;
     padding: 5px;
     border-radius: 5px;
@@ -1394,7 +1397,8 @@ header nav ul li a.activo {
     justify-content: left;
     color: #c7b6c3;
 }
-.admin-image-prod{
+
+.admin-image-prod {
     width: 10%;
     height: 10%;
 }
@@ -1420,6 +1424,18 @@ td.stock-critico {
     align-self: center;
     width: 300px;
     margin: 10px;
+}
+
+/* === Admin-crear-usuario === */
+#editar-usuario {
+    background-color: rgb(104, 68, 91);
+    border-radius: 8px;
+    padding: 25px;
+    width: 600px;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
 }
 
 /* === admin-mostrar-usuario === */

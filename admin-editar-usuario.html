@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar usuario</title>
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="js/funciones.js" defer></script>
+</head>
+
+<body class="vista-admin-body">
+    <div class="vista-admin-container">
+        <header>
+            <a href="index.html">
+                <img src="img/logo.jpg" alt="logo de sonido vivo" class="logo-principal" />
+            </a>
+            <h1>
+                Sonido <br />
+                Vivo
+            </h1>
+
+            <nav>
+                <ul>
+                    <li><a href="#">Dashboards</a></li>
+                    <li><a href="listado-usuario.html">Gestión de usuarios</a></li>
+                    <li><a href="admin-inventario.html">Gestión de inventario</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <form id="editar-usuario" novalidate>
+                <h2>Editar usuario</h2>
+
+                <label for="nombre-user">Nombre completo</label>
+                <input type="text" id="nombre-user" required>
+                <span class="error" id="error-nombre"></span>
+
+                <label for="run">RUN</label>
+                <input type="text" id="run" required>
+                <span class="error" id="error-run"></span>
+
+                <label for="correo-user">Correo electrónico</label>
+                <input type="email" id="correo-user" required>
+                <span class="error" id="error-correo"></span>
+
+                <label for="contrasena-user">Nueva Contraseña (dejar en blanco para mantener la actual)</label>
+                <input type="password" id="contrasena-user">
+                <span class="error" id="error-contrasena-user"></span>
+
+                <label for="contrasena-check-user">Confirmar Nueva Contraseña</label>
+                <input type="password" id="contrasena-check-user">
+                <span class="error" id="error-contrasena-check-user"></span>
+
+                <label for="telefono-user">Teléfono (opcional)</label>
+                <input type="text" id="telefono-user">
+
+                <label for="region-user">Región</label>
+                <select name="region" id="region-user" required>
+                    <option value="">--Seleccione la region--</option>
+                    <option>Metropolitana</option>
+                    <option>Araucanía</option>
+                    <option>Ñuble</option>
+                </select>
+
+                <label for="comuna-user">Comuna</label>
+                <select name="comuna" id="comuna-user" required>
+                    <option value="">--Seleccione la comuna--</option>
+                    <option>Santiago</option>
+                    <option>Temuco</option>
+                    <option>Chillán</option>
+                </select>
+
+                <label for="tipo-usuario">Tipo de usuario</label>
+                <select id="tipo-usuario" required>
+                    <option value="">--Seleccione un tipo--</option>
+                    <option>Administrador</option>
+                    <option>Vendedor</option>
+                    <option>Cliente</option>
+                </select>
+
+                <button class="button" type="submit" id="boton-user">Guardar cambios</button>
+                <p id="mensaje-confirmacion"></p>
+            </form>
+        </main>
+    </div>
+
+    <footer class="vista-admin-footer">
+        <div class="footer-info">
+            <p>&copy; 2026 Sonido Vivo. Todos los derechos reservados.</p>
+            <p class="estado-sistema">En línea</p>
+        </div>
+    </footer>
+</body>
+
+</html>
