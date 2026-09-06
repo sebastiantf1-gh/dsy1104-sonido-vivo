@@ -89,7 +89,7 @@ if (formularioLogin) {
 
         if (!patronCorreoLogin.test(correoLogin.value.trim()) || correoLogin.value.length > 100) {
             correoLogin.classList.add('campo-error');
-            document.querySelector('#error-correo').textContent = "Formato de correo no valido"
+            document.querySelector('#error-correo').textContent = "Correo no valido"
             formularioLoginValido = false;
         } else {
             correoLogin.classList.remove('campo-error');
@@ -98,7 +98,7 @@ if (formularioLogin) {
 
         if (contrasena.value.length < 4 || contrasena.value.length > 10) {
             contrasena.classList.add('campo-error');
-            document.querySelector('#error-contrasena').textContent = "La cantidad de caracteres es entre 4 y 10"
+            document.querySelector('#error-contrasena').textContent = "Contraseña no valida"
             formularioLoginValido = false;
         } else {
             contrasena.classList.remove('campo-error')

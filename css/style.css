@@ -24,15 +24,25 @@ header nav {
 header nav a {
     color: rgb(7, 6, 6);
     text-decoration: none;
+    font-weight: bold;
+    padding: 25px 20px;
+    border-radius: 4px;
 }
 
 header nav a:hover {
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.14);
-    transform: translateX(-1px);
-    padding: 5px;
-    border-radius: 10px;
-    background-color: rgb(150, 96, 130);
-    ;
+    background-color: rgb(133, 62, 107);
+}
+
+#categorias nav a {
+    text-decoration: none;
+    color: #200347;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+#categorias nav a:hover {
+    text-decoration: none;
+    background-color: rgb(142, 96, 125);
 }
 
 .logo-principal {
@@ -72,6 +82,10 @@ h3 {
     object-fit: contain;
     border-radius: 6px;
     margin-bottom: 10px;
+}
+
+.producto img:hover {
+    transform: translateY(-6px);
 }
 
 /* === Catalogo === */
