@@ -142,6 +142,8 @@ if (formularioRegistro) {
         const correoRegistro = document.querySelector('#correo-registro');
         const contrasenaRegistro = document.querySelector('#contrasena-registro');
         const contrasenaCheck = document.querySelector('#contrasena-check');
+        const region = document.querySelector('#region');
+        const comuna = document.querySelector('#comuna');
 
 
         let formularioRegistroValido = true;
@@ -181,6 +183,20 @@ if (formularioRegistro) {
         } else {
             contrasenaCheck.classList.remove('campo-error')
             document.querySelector('#error-contrasena-check').textContent = ''
+        }
+
+        if (region.value.trim() === '') {
+            region.classList.add('campo-error');
+            formularioRegistroValido = false;
+        } else {
+            region.classList.remove('campo-error');
+        }
+
+        if (comuna.value.trim() === '') {
+            comuna.classList.add('campo-error');
+            formularioRegistroValido = false;
+        } else {
+            comuna.classList.remove('campo-error');
         }
 
         if (formularioRegistroValido) {
@@ -243,3 +259,115 @@ function cargarListadoUsuarios() {
 }
 
 document.addEventListener('DOMContentLoaded', cargarListadoUsuarios);
+
+//Logica para el admin-crear-usuario.html
+const formularioUsuario = document.querySelector('#registrar-usuario');
+if (formularioUsuario) {
+    const region = document.querySelector('#region-user');
+    const comuna = document.querySelector('#comuna-user');
+    const comunasRegion = {
+        'Metropolitana': ['Santiago'],
+        'Araucania': ['Temuco'],
+        'ñuble': ['Chillan']
+    };
+    region.addEventListener('change', function () {
+        const regionSeleccionada = this.value;
+        comuna.innerHTML = '<option value="">--Seleccione la comuna--</option>';
+
+        if (regionSeleccionada && comunasRegion[regionSeleccionada]) {
+            comunasRegion[regionSeleccionada].forEach(function (nombreComuna) {
+                const opcion = document.createElement('option');
+                opcion.value = nombreComuna;
+                opcion.textContent = nombreComuna;
+                comuna.appendChild(opcion);
+            });
+        }
+    });
+
+    formularioUsuario.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        const nombre = document.querySelector('#nombre-user');
+        const correoRegistro = document.querySelector('#correo-user');
+        const contrasenaRegistro = document.querySelector('#contrasena-user');
+        const contrasenaCheck = document.querySelector('#contrasena-check-user');
+        const region = document.querySelector('#region-user');
+        const comuna = document.querySelector('#comuna-user');
+        const run = document.querySelector('#run');
+        const tipoUsuario = document.querySelector('#tipo-usuario');
+
+
+        let formularioUserValido = true;
+        const patronCorreoRegistro = /^[^\s@]+@(duoc\.cl|profesor\.duoc\.cl|gmail\.com)$/;
+        const patronRun = /^[0-9]{7,8}[0-9kK]$/;
+        if (nombre.value.length > 50 || nombre.value.trim() === '') {
+            nombre.classList.add('campo-error');
+            document.querySelector('#error-nombre').textContent = "Supera la cantidad de caracteres minimos o esta vacio"
+            formularioUserValido = false;
+        } else {
+            nombre.classList.remove('campo-error')
+            document.querySelector('#error-nombre').textContent = ''
+        }
+        if (!patronRun.test(run.value.trim())) {
+            run.classList.add('campo-error');
+            document.querySelector('#error-run').textContent = "Ingrese un RUN valido"
+            formularioUserValido = false;
+        } else {
+            run.classList.remove('campo-error');
+            document.querySelector('#error-run').textContent = '';
+        }
+
+
+        if (!patronCorreoRegistro.test(correoRegistro.value.trim()) || correoRegistro.value.length > 100) {
+            correoRegistro.classList.add('campo-error');
+            document.querySelector('#error-correo').textContent = "Formato de correo no valido"
+            formularioUserValido = false;
+        } else {
+            correoRegistro.classList.remove('campo-error');
+            document.querySelector('#error-correo').textContent = ''
+        }
+
+        if (contrasenaRegistro.value.length < 4 || contrasenaRegistro.value.length > 10) {
+            contrasenaRegistro.classList.add('campo-error');
+            document.querySelector('#error-contrasena-registro').textContent = "La cantidad de caracteres es entre 4 y 10"
+            formularioUserValido = false;
+        } else {
+            contrasenaRegistro.classList.remove('campo-error')
+            document.querySelector('#error-contrasena-user').textContent = ''
+        }
+
+        if (contrasenaRegistro.value != contrasenaCheck.value) {
+            contrasenaCheck.classList.add('campo-error');
+            document.querySelector('#error-contrasena-check-user').textContent = "Las contrasenas deben coincidir"
+            formularioUserValido = false;
+        } else {
+            contrasenaCheck.classList.remove('campo-error')
+            document.querySelector('#error-contrasena-check-user').textContent = ''
+        }
+
+        if (region.value.trim() === '') {
+            region.classList.add('campo-error');
+            formularioUserValido = false;
+        } else {
+            region.classList.remove('campo-error');
+        }
+
+        if (comuna.value.trim() === '') {
+            comuna.classList.add('campo-error');
+            formularioUserValido = false;
+        } else {
+            comuna.classList.remove('campo-error');
+        }
+
+        if (tipoUsuario.value.trim() === '') {
+            tipoUsuario.classList.add('campo-error');
+            formularioUserValido = false;
+        } else {
+            tipoUsuario.classList.remove('campo-error');
+        }
+
+        if (formularioUserValido) {
+            document.querySelector('#mensaje-confirmacion').textContent = 'Registrado correctamente'
+        }
+    })
+}
