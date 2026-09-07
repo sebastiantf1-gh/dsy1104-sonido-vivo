@@ -1492,6 +1492,62 @@ td.stock-critico {
 
 }
 
+/* === Dashboard vista admin === */
+
+.estadisticas-mes-dash{
+    background-color: #392D3B;
+    padding: 5px;
+    border: #B08BB5 solid 2px;
+    border-radius: 5px;
+}
+
+.acciones-rapidas-dash{
+    background-color: #392D3B;
+    border: #B08BB5 solid 2px;
+    border-radius: 5px;
+    padding: 5px;
+}
+.estadisticas-mes-dash li{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    margin-left: 10px;
+}
+
+.estadisticas-mes-dash ul{
+    list-style: none;
+}
+.acciones-rapidas-dash ul{
+    list-style: none;
+}
+.acciones-rapidas-dash li{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 0.9rem;
+}
+.estadisticas-mes-dash li{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    margin-left: 10px;
+    font-size: 0.9rem;
+}
+
+.productos-poco-stock-dash{
+    background-color: #392D3B;
+    border: #B08BB5 solid 2px;
+    border-radius: 5px;
+    padding: 5px;
+}
+.productos-poco-stock-dash li{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    margin-left: 10px;
+    font-size: 0.9rem;
+}
+
 /* === Pie de página === */
 footer {
     background-color: rgb(142, 96, 125);

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/funciones.js" defer></script>
+
+</head>
+<body class="vista-admin-body">
+    <div class="vista-admin-container">
+        <header>
+            <a href="index.html">
+                <img src="img/logo.jpg" alt="logo de sonido vivo" class="logo-principal"/>
+            </a>
+            <h1>
+                Sonido <br />
+                Vivo
+            </h1>
+
+            <nav>
+                <ul>
+                    <li><a href="admin-dashboard.html">Dashboards</a></li>
+                    <li><a href="listado-usuario.html">Gestión de usuarios</a></li>
+                    <li><a href="admin-inventario.html">Gestión de inventario</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <h2>Panel de Control</h2>
+
+            <div class="caja-formulario">
+                <div class="form-admin">
+                    <h3>Resumen General</h3>
+                    <div class="estadisticas-mes-dash">
+                        <h4>Estadísticas del mes:</h4>
+
+                        <ul>
+                            <li>Ventas totales: $4.250.000</li>
+                            <li>Productos registrados: 128</li>
+                            <li>Usuarios registrados: 45</li>
+                        </ul>
+                    </div>
+
+                    <div class="acciones-rapidas-dash">
+                        <h4>Acciones rápidas:</h4>
+                    
+                        <ul class="lista-acciones-dash">
+                            <li>
+                                <div class="admin-contenedor-btn-agregar">
+                                    <a href="admin-crear-producto.html" class="admin-agregar-btn">Crear Nuevo Producto</a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="admin-contenedor-btn-agregar">
+                                    <a href="admin-crear-usuario.html" class="admin-agregar-btn">Crear Nuevo Usuario</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="productos-poco-stock-dash">
+                        <p><strong>Productos con poco Stock:</strong></p>
+                        <ul>
+                            <li>Batería Electrónica (Quedan: 1)</li>
+                            <li>Micrófono Shure (Quedan: 2)</li>
+                            <li>Teclado Yamaha (Agotado)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+        <footer class="vista-admin-footer">
+            <div class="footer-info">
+                <p>&copy; 2026 Sonido Vivo. Todos los derechos reservados.</p>
+                <p class="estado-sistema">En línea</p>
+            </div>
+            <div class="footer-ayuda">
+                <a href="#">Ayuda</a>
+                <p>Versión 1.0.0 (Prototipo Parcial01)</p>
+            </div>
+        </footer>
+    </body>
+</html>
